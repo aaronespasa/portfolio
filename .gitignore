@@ -1,0 +1,43 @@
+# MacOS
+.DS_Store
+
+####### React ########
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+package-lock.json
+
+# Testing
+/coverage
+
+# Production
+/build
+
+# Mist
+npm-debug.log*
+
+######################
+
+####### Visual Studio Code ########
+
+.vscode/*
+*.code-workspace
+
+# Track these files if they exist
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Local History for Visual Studio Code
+.history/
+
+###################################
+
+####### Custom ########
+
+# ...
+
+#######################
