@@ -1,0 +1,39 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "@aaronespasa portfolio",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier -write .",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronespasa/portfolio.git"
+  },
+  "keywords": [],
+  "author": "Aaron Espasandin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/aaronespasa/portfolio/issues"
+  },
+  "homepage": "https://github.com/aaronespasa/portfolio#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^1.7.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^5.3.0",
+    "next": "^12.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.3",
+    "prettier": "^2.4.1"
+  }
+}
