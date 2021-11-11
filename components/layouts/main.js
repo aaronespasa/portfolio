@@ -7,6 +7,7 @@ const Main = ({ children }) => {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>Aaron Espasandin - Home</title>
+                <link rel="shortcut icon" href="/images/favicon/favicon.ico"/>
             </Head>
 
             <Container maxW="container.md" pt={14}>
