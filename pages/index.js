@@ -12,6 +12,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
+import Footer from '../components/footer'
 import { BioSection, BioYear } from '../components/bio'
 
 const Page = () => {
@@ -101,6 +102,7 @@ const Page = () => {
                         Working on two projects for improving AI education (DeepGang) and help people decide which wall color paint to buy using Augmented Reality (PaintWall).
                     </BioSection>
                 </Section>
+                <Footer />
             </Container>
         </Layout>
     )

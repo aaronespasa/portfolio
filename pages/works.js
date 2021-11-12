@@ -2,6 +2,7 @@ import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
+import Footer from '../components/footer'
 import thumbLearnBox from '../public/images/learnbox-thumbnail.png'
 import thumbPaintWall from '../public/images/paintwall-thumbnail.jpeg'
 import thumbRoute from '../public/images/route-a-star-openstreetmap-thumbnail.png'
@@ -42,6 +43,7 @@ const Works = () => {
                         </WorkGridItem>
                     </Section>
                 </SimpleGrid>
+                <Footer />
             </Container>
         </Layout>
     )
