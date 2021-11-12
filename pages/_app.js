@@ -9,6 +9,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
 import theme from '../lib/theme'
+import { AnimatePresence } from 'framer-motion'
 
 const Website = ({ Component, pageProps, router }) => {
     return (
@@ -16,8 +17,10 @@ const Website = ({ Component, pageProps, router }) => {
             <Fonts />
             {/* The Layout will add some width to all pages */}
             <Layout router={router}>
-                {/* Component will represent all other pages */}
-                <Component {...pageProps} key={router.route} />
+                <AnimatePresence exitBeforeEnter initial={true}>
+                    {/* Component will represent all other pages */}
+                    <Component {...pageProps} key={router.route} />
+                </AnimatePresence>
             </Layout>
         </ChakraProvider>
     )
