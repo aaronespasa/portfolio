@@ -31,7 +31,7 @@ const Works = () => {
                     </Section>
 
                     <Section delay={0.1}>
-                        <WorkGridItem id="router-a-star" title="A Star applied to OpenStreetMap in C++" thumbnail={thumbRoute}>
+                        <WorkGridItem id="route-a-star" title="A Star applied to OpenStreetMap in C++" thumbnail={thumbRoute}>
                             A program simulating Google Maps where the A Star algorithm is applied by using C++ to draw the shortest path in the OpenStreet map
                         </WorkGridItem>
                     </Section>
