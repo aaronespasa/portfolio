@@ -7,10 +7,13 @@
 // ChakraProvider at the root of the application!
 import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../components/layouts/main'
+import Fonts from '../components/fonts'
+import theme from '../lib/theme'
 
 const Website = ({ Component, pageProps, router }) => {
     return (
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
+            <Fonts />
             {/* The Layout will add some width to all pages */}
             <Layout router={router}>
                 {/* Component will represent all other pages */}
