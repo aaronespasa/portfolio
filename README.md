@@ -1,9 +1,5 @@
 # [Jump to my Portfolio! ⚡️](https://aaronespasa.com/)
 
-⚠️ This project is under development!
-
-I will be writing all the details here. Keep calm and go make yourself a coffee ☕️
-
 ## Tools 🛠
 
 👨‍💻 **React**: A JavaScript library for building UIs.
@@ -21,17 +17,22 @@ I will be writing all the details here. Keep calm and go make yourself a coffee 
 ```
 portfolio
 │
-└───components     # React component files
+└───components      # React component files
 │   │   ...
-│   
-└───lib            # Non-react modules
+|   └───layouts
+│       │ article       # Animation between pages
+│       │ main          # "container" for all pages
+│
+└───lib             # Non-react modules
 │   │   ...
 │
-└───pages          # Page files
+└───pages           # Page files
 │   │   ...
+|   └───works           # All work details
 │
-└───public         # Static files
-│   │   ...
+└───public          # Static files
+│   │   dog.glb     # 3D Model
+|   └───images          # Images and Favicon
 │
 │
 │ README.md
