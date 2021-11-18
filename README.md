@@ -1,5 +1,7 @@
 # [Jump to my Portfolio! ⚡️](https://aaronespasa.com/)
 
+![GIF Preview](https://github.com/aaronespasa/portfolio/blob/main/public/images/portfolio-preview.gif)
+
 ## Tools 🛠
 
 👨‍💻 **React**: A JavaScript library for building UIs.
