@@ -23,7 +23,7 @@ const Work = () => {
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>GitHub</Meta>
-                        <Link href="https://github.com/aaronespasa/route-planning-realword">Route planning real-world<ExternalLinkIcon mx="2px" /></Link>
+                        <Link href="https://github.com/aaronespasa/a-star-openstreetmap">Route planning real-world<ExternalLinkIcon mx="2px" /></Link>
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>
