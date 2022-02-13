@@ -30,13 +30,18 @@ fileName=${fileName%.*}     # remove the extension
 finalFileExtension=".png"
 folderPath="${1%/*}/"
 thumbnailFolder="thumbnails/"
-thumbnailFilePath="$folderPath$thumbnailFolder$fileName$finalFileExtension"
+thumbnailFolderPath="$folderPath$thumbnailFolder"
+thumbnailFilePath="$thumbnailFolderPath$fileName$finalFileExtension"
 singlePageName="singlePage.pdf"
 singlePagePdfPath="$folderPath$singlePageName"
 
 # Create a pdf containing the first page of the given pdf
 if [ ! -f "$singlePagePdfPath" ]; then
     pdftk $filePath cat 1 output $singlePagePdfPath
+fi
+
+if [ ! -f "$thumbnailFolderPath" ]; then
+    mkdir $thumbnailFolderPath
 fi
 
 # Create the thumbnail png file
