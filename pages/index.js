@@ -17,7 +17,7 @@ import { BioSection, BioYear } from '../components/bio'
 
 const Page = () => {
     return (
-        <Layout>
+        <Layout title="Computer Vision Engineer" pageUrl="">
             <Container>
                 <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} align="center">
                     Hello, I&apos;m a Computer Vision Engineer based in Spain!

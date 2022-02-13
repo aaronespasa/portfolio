@@ -10,7 +10,7 @@ import thumbImageCaptioning from '../public/images/image-captioning-thumbnail.pn
 
 const Works = () => {
     return (
-        <Layout>
+        <Layout title="Works" pageUrl="works">
             <Container>
                 <Heading as="h3" fontSize={20} mb={4}>
                     Works
