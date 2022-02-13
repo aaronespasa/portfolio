@@ -10,7 +10,9 @@ const Main = ({ children }) => {
         <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <title>Aaron Espasandin - Home</title>
+                {/* If the title argument is not introduced on the Layout component, this
+                    is the default title */}
+                <title>Aaron Espasandin</title>
                 <link rel="shortcut icon" href="/images/favicon/favicon.ico"/>
             </Head>
 
