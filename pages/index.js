@@ -59,7 +59,7 @@ const Page = () => {
                         for teaching and building innovative services which can improve people&apos;s lifes.
                         He has a knack for coming up with new impactful ideas and planning and designing them
                         to create a usable prototype as quickly as possible (<NextLink href="https://youtu.be/b4dMker1JlE">
-                            <Link>36h challenge</Link>
+                            <Link href="https://youtu.be/b4dMker1JlE">36h challenge</Link>
                         </NextLink>).
                         <br />
                         Currently, he is building his own app called PaintWall to help people decide which color to use for their walls by seeing the walls painted in real time.
