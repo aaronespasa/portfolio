@@ -50,7 +50,9 @@ const Works = () => {
                         Discrete Mathematics
                     </Heading>
                     <Paragraph>
-                        This is the description of Discrete Mathematics.
+                       Discrete mathematics is the study of discrete data rather than the continuous data. This branch of mathematics covers topics like set theory, graph theory, permutations, etc.<br/><br/>
+                       
+                       The following files correspond to a whole Discrete Mathematics university course:
                     </Paragraph>
                     <EmblaCarousel slides={discreteMathPdfs} />
                 </Section>
