@@ -1,33 +1,43 @@
 import NextLink from 'next/link'
 import Image from 'next/image'
 import {
-    Box,
+    Center,
+    Button,
+    VStack,
     LinkBox,
     LinkOverlay
 } from "@chakra-ui/react"
 import { Global } from '@emotion/react'
 
-const FilePreview = ({_title, folderName, fileName, pdfUrl}) => {
+const FilePreview = ({title, folderName, fileName, pdfUrl}) => {
     let thumbPath = `/notes/${folderName}/thumbnails/${fileName}.png`
 
     return(
         <NextLink href={pdfUrl} target="_blank">
             <LinkBox cursor="pointer">
                 <LinkOverlay href={pdfUrl} target="_blank">
-                    <Box
-                        width={300}
-                        height={220}
+                    <Center
+                        width={260}
+                        height={190}
                         overflow='hidden'
+                        className="pdf-preview-image-box"
                     >
+                        <Center className="pdf-preview-image-card">
+                            <VStack>
+                                <p className="pdf-preview-image-text">{title}</p>
+                                <Button colorScheme='teal' variant='solid'>
+                                    View File
+                                </Button>
+                            </VStack>
+                        </Center>
                         <Image
                             src={thumbPath}
                             alt="PDF Preview"
                             loading="lazy"
                             layout="fill"
-                            objectFit="cover"
                             className="pdf-preview-image"
                         />
-                    </Box>
+                    </Center>
                 </LinkOverlay>
             </LinkBox>
         </NextLink>
@@ -36,8 +46,31 @@ const FilePreview = ({_title, folderName, fileName, pdfUrl}) => {
 
 export const FilePreviewStyle = () => (
     <Global styles={`
-        .pdf-preview-image {
+        .pdf-preview-image-card {
+            height: 65%;
+            width: 80%;
+            z-index: 10;
+            backdrop-filter: blur(5px) saturate(156%);
+            -webkit-backdrop-filter: blur(5px) saturate(156%);
+            background-color: rgba(255, 255, 255, 0.64);
             border-radius: 12px;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+            padding: 20px;
+        }
+
+        .pdf-preview-image-text {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 6px 6px 12px rgba(150, 150, 150, 0.69);
+            color: rgb(50, 50, 50);
+        }
+
+        .pdf-preview-image {
+            border-radius: 5px 5px 0 0;
+            z-index: -1;
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
         }
     `}
     />

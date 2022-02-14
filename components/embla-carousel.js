@@ -34,7 +34,7 @@ const EmblaCarousel = ({ slides }) => {
             <div className="embla__slide" key={slide["key"]}>
               <div className="embla__slide__inner">
                 <FilePreview
-                    _title={slide["title"]}
+                    title={slide["title"]}
                     folderName={slide["folderName"]}
                     fileName={slide["fileName"]}
                     pdfUrl={slide["pdfUrl"]}
