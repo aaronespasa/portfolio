@@ -1,33 +1,41 @@
 import {
     Container,
-    Heading,
-    HStack,
-    Box
+    Heading
 } from '@chakra-ui/react'
 // import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import Footer from '../components/footer'
-
-const FilePreview = ({_title, folderName, fileName}) => {
-    let thumbPath = `/notes/${folderName}/thumbnails/${fileName}.png`
-
-    return(
-        <Box
-            borderRadius="md"
-            width={200}
-            height={200}
-            bgImage={thumbPath}
-            bgPosition="center"
-            bgRepeat="no-repeat"
-            bgSize="contain"
-        >
-        </Box>
-    )
-}
+import EmblaCarousel from "../components/embla-carousel";
 
 const Works = () => {
+    const bucketUrl = "https://aaronespasa-portfolio-bucket.s3.eu-west-3.amazonaws.com/"
+
+    const discreteMathPdfs = [
+        {
+            title: "Set Theory & Combinatorics",
+            folderName: "discrete-math",
+            fileName: "set-theory-combinatorics",
+            pdfUrl: bucketUrl + "set-theory-combinatorics.pdf",
+            key: "DM-STC"
+        },
+        {
+            title: "Graph Theory",
+            folderName: "discrete-math",
+            fileName: "graph-theory",
+            pdfUrl: bucketUrl + "graph-theory.pdf",
+            key: "DM-GT"
+        },
+        {
+            title: "Exams",
+            folderName: "discrete-math",
+            fileName: "exams",
+            pdfUrl: bucketUrl + "exams.pdf",
+            key: "DM-EX"
+        }
+    ]
+
     return (
         <Layout title="Notes" pageUrl="notes">
             <Container>
@@ -44,23 +52,7 @@ const Works = () => {
                     <Paragraph>
                         This is the description of Discrete Mathematics.
                     </Paragraph>
-                    <HStack spacing={8}>
-                        <FilePreview
-                            title="Set Theory & Combinatorics"
-                            folderName="discrete-math"
-                            fileName="set-theory-combinatorics"
-                        />
-                        <FilePreview
-                            title="Set Theory & Combinatorics"
-                            folderName="discrete-math"
-                            fileName="set-theory-combinatorics"
-                        />
-                        <FilePreview
-                            title="Set Theory & Combinatorics"
-                            folderName="discrete-math"
-                            fileName="set-theory-combinatorics"
-                        />
-                    </HStack>
+                    <EmblaCarousel slides={discreteMathPdfs} />
                 </Section>
                 
                 <Footer />
