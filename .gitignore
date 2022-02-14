@@ -42,5 +42,6 @@ npm-debug.log*
 ####### Custom ########
 
 *.pdf
+.env.local
 
 #######################
