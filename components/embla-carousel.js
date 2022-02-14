@@ -91,6 +91,24 @@ export const EmblaCarouselStyle = () => (
             padding-left: 10px;
         }
 
+        @media only screen and (max-width: 600px) {
+          .embla__slide {
+            min-width: 60%;
+          }
+        }
+
+        @media only screen and (max-width: 500px) {
+          .embla__slide {
+            min-width: 70%;
+          }
+        }  
+
+        @media only screen and (max-width: 400px) {
+          .embla__slide {
+            min-width: 90%;
+          }
+        }
+
         .embla__slide__inner {
             position: relative;
             overflow: hidden;
