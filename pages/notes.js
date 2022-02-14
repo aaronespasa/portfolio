@@ -10,7 +10,7 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import Footer from '../components/footer'
 
-const FilePreview = ({title, folderName, fileName}) => {
+const FilePreview = ({_title, folderName, fileName}) => {
     let thumbPath = `/notes/${folderName}/thumbnails/${fileName}.png`
 
     return(
