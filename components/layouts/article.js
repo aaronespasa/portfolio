@@ -36,9 +36,9 @@ const Layout = ({ children, title, pageUrl }) => (
 
                     {/* Open Graph */}
                     <meta property="og:url" content={domain+pageUrl} key="ogurl" />
-                    <meta property="og:image" content="/images/image-captioning-thumbnail.png" key="ogimage"/>
+                    <meta property="og:image" content="/images/open-graph-image.png" key="ogimage"/>
                     <meta property="og:site_name" content="Aaron Espasandin Portfolio" key="ogsitename"/>
-                    <meta property="og:title" content={"Aaron Espasandin, a Computer Vision Engineer" + " - " + title} key="ogtitle" />
+                    <meta property="og:title" content={"Aaron Espasandin, a Computer Vision Engineer"} key="ogtitle" />
                     <meta property="og:description" content={description} key="ogdescription" />
 
                     {/* SEO */}
