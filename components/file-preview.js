@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import Image from 'next/image'
 import {
     Center,
-    Button,
+    Box,
     VStack,
     LinkBox,
     LinkOverlay
@@ -25,9 +25,21 @@ const FilePreview = ({title, folderName, fileName, pdfUrl}) => {
                         <Center className="pdf-preview-image-card">
                             <VStack>
                                 <p className="pdf-preview-image-text">{title}</p>
-                                <Button colorScheme='teal' variant='solid'>
+                                <Box
+                                    as='button'
+                                    px={4}
+                                    py={2}
+                                    transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                                    color='white'
+                                    fontWeight='bold'
+                                    borderRadius='md'
+                                    bgGradient='linear(to-r, teal.500, green.500)'
+                                    _hover={{
+                                        bgGradient: 'linear(to-r, teal.600, green.600)'
+                                    }}    
+                                >
                                     View File
-                                </Button>
+                                </Box>
                             </VStack>
                         </Center>
                         <Image
