@@ -44,7 +44,7 @@ const Page = () => {
                             maxWidth="100px"
                             display="inline-block"
                             borderRadius="full"
-                            src="/images/aaronespasa.jpeg"
+                            src="/images/profile-image.png"
                             alt="Profile Image"
                         />
                     </Box>
