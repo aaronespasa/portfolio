@@ -1,13 +1,13 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 import {
     Container,
     Box,
     Button,
     Heading,
     Image,
-    Link,
     useColorModeValue
 } from '@chakra-ui/react'
+import {Link as ChakraLink} from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -52,24 +52,41 @@ const Page = () => {
 
                 <Section delay={0.1}>
                     <Heading as="h3" variant="section-title">
-                        Work
+                        About Me
                     </Heading>
                     <Paragraph>
-                        &nbsp;&nbsp;&nbsp;&nbsp;Aaron is a computer vision engineer based in Madrid with a passion
-                        for teaching and building innovative services which can improve people&apos;s lifes.
-                        He has a knack for coming up with new impactful ideas and planning and designing them
-                        to create a usable prototype as quickly as possible (<NextLink href="https://youtu.be/b4dMker1JlE">
-                            <Link href="https://youtu.be/b4dMker1JlE">36h challenge</Link>
-                        </NextLink>).
+                        &nbsp;&nbsp;&nbsp;Aaron is a Computer Vision Engineer based in Madrid with a passion
+                        for Augmented Reality, state-of-the-art Computer Vision, Math & Front-end dev.
+                        
+                        <br /><br />
+                        
+                        He has both experience designing algorithms with optimal complexity and with development
+                        (<ChakraLink><Link href="https://youtu.be/b4dMker1JlE">2nd Prize International 36h Hackathon (5000€)</Link></ChakraLink>
+                        &nbsp;-&nbsp; 
+                        <ChakraLink><Link href="https://youtu.be/b4dMker1JlE">Demo</Link></ChakraLink>).
+                        
+                        <br /><br />
+                        
+                        Currently, he is building:
                         <br />
-                        Currently, he is building his own app called PaintWall to help people decide which color to use for their walls by seeing the walls painted in real time.
+                        🎨&nbsp;&nbsp;<ChakraLink><Link href="/works/paintwall"><strong>PaintWall</strong></Link></ChakraLink>: Real-time & realistic wall painting app.
+                        <br />
+                        🐶&nbsp;&nbsp;<strong>Augmented Web</strong>: Move & scale the dog on top of the page (a 3D model) making gestures 🙌&nbsp; to the camera.
+                        
+                        <br /><br />
+                        
+                        He has contributed to make <ChakraLink><Link href="https://pytorch.org/live/">PyTorch Live</Link></ChakraLink> available for Apple Silicon:
+                        <br />
+                        📲&nbsp;&nbsp;<ChakraLink><Link href="https://pytorch.org/live/">Create an AVD for the M1 Macs</Link></ChakraLink>: Before this PR, the Android Virtual Device was just available for the x86 CPU architecture.
+                        <br />
+                        📀&nbsp;&nbsp;<ChakraLink><Link href="https://pytorch.org/live/">RuntimeError related to quantization solved for Apple Silicon</Link></ChakraLink>: Before this small PR, it was imposible to set up a PyTorch Live template on Apple Silicon.
                     </Paragraph>
                     <Box align="center" my={4}>
-                        <NextLink href="/works">
+                        <Link href="/works">
                             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal" >
-                                My portfolio
+                                My projects
                             </Button>
-                        </NextLink>
+                        </Link>
                     </Box>
                 </Section>
 
