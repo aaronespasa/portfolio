@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Text, useColorModeValue } from '@chakra-ui/react'
+import { Text, Box, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
@@ -12,8 +12,12 @@ height: 30px;
 line-height: 20px;
 padding: 10px;
 
-&:hover img {
-    transform: rotate(20deg);
+& .logo-container{
+    transition: 0.6s;
+}
+
+&:hover .logo-container {
+    transform: rotate(360deg);
 }
 `
 
@@ -24,7 +28,9 @@ const Logo = () => {
         <Link href="/">
             <a>
                 <LogoBox>
-                    <Image src={footPrintImg} width={20} height={20} alt="Logo" />
+                    <Box className="logo-container">
+                        <Image src={footPrintImg} width={20} height={20} alt="Logo" />
+                    </Box>
                     <Text
                         color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                         fontFamily='M PLUS Rounded 1c'
