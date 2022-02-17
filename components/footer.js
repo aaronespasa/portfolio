@@ -1,7 +1,7 @@
 import {
     Box,
     Button,
-    Heading,
+    Divider,
     Icon,
     Link,
     SimpleGrid,
@@ -16,9 +16,7 @@ import {
 const Footer = () => {
     return (
         <Section delay={0.3}>
-            <Heading as="h3" variant="section-title">
-                On the web
-            </Heading>
+            <Divider orientation='horizontal' my={8} />
             <SimpleGrid columns={[1, 1, 3]}>
                 <Box>
                     <Link href="https://github.com/aaronespasa" target="_blank">
