@@ -77,9 +77,9 @@ const Page = () => {
                         
                         He has contributed to make <ChakraLink><Link href="https://pytorch.org/live/">PyTorch Live</Link></ChakraLink> available for Apple Silicon:
                         <br />
-                        📲&nbsp;&nbsp;<ChakraLink><Link href="https://pytorch.org/live/">Create an AVD for the M1 Macs</Link></ChakraLink>: Before this PR, the Android Virtual Device was just available for the x86 CPU architecture.
+                        📲&nbsp;&nbsp;<ChakraLink><Link href="https://github.com/pytorch/live/pull/24">Create an AVD for the M1 Macs</Link></ChakraLink>: Before this PR, the Android Virtual Device was just available for the x86 CPU architecture.
                         <br />
-                        📀&nbsp;&nbsp;<ChakraLink><Link href="https://pytorch.org/live/">RuntimeError related to quantization solved for Apple Silicon</Link></ChakraLink>: Before this small PR, it was imposible to set up a PyTorch Live template on Apple Silicon.
+                        📀&nbsp;&nbsp;<ChakraLink><Link href="https://github.com/pytorch/live/pull/8">RuntimeError related to quantization solved for Apple Silicon</Link></ChakraLink>: Before this small PR, it was imposible to set up a PyTorch Live template on Apple Silicon.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <Link href="/works">
