@@ -46,7 +46,7 @@ const Layout = ({ children, title, pageUrl }) => (
                     <meta property="og:type" content="website" />
 
                     {/* SEO */}
-                    <meta charset="UTF-8" key="charset" />
+                    <meta charSet="UTF-8" key="charset" />
                     <meta name="google" content="nositelinkssearchbox" />
                     <meta name="description" content={metaDescription} key="description" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" key="viewport" />
