@@ -11,7 +11,7 @@ const variants = {
 }
 
 const domain = "https:://www.aaronespasa.com/";
-const metaDescription = "Aaron is a Computer Vision Engineer 👁 He's creating an Image Segmentation iOS app & a plugin to interact with WebGL 3D model with the hands! 🖐";
+const metaDescription = "Computer Vision Engineer -- Creating a Wall Painting App & adapting the web to augmented reality ⚡️";
 
 const Layout = ({ children, title, pageUrl }) => (
     <motion.article
@@ -27,7 +27,7 @@ const Layout = ({ children, title, pageUrl }) => (
                 <Head>
                     {/* Twitter */}
                     <meta name="twitter:card" content="summary_large_image" key="twittercard" />
-                    <meta name="twitter:title" content={"Aaron Espasandin, a Computer Vision Engineer" + " - " + title} key="twittertitle" />
+                    <meta name="twitter:title" content={"Aaron Espasandin -- Computer Vision Engineer" + " - " + title} key="twittertitle" />
                     <meta name="twitter:description" content={metaDescription} key="twitterdescription" />
                     <meta name="twitter:site" content="@aaronespasa" key="twittersite" />
                     <meta name="twitter:creator" content="@aaronespasa" key="twittercreator" />
@@ -39,11 +39,17 @@ const Layout = ({ children, title, pageUrl }) => (
 
                     {/* Open Graph */}
                     <meta property="og:url" content={domain+pageUrl} key="ogurl" />
-                    <meta property="og:image" content="https://aaronespasa-portfolio-bucket.s3.eu-west-3.amazonaws.com/open-graph-image.png" key="ogimage"/>
-                    <meta property="og:site_name" content="Aaron Espasandin Portfolio" key="ogsitename"/>
-                    <meta property="og:title" content={"Aaron Espasandin, a Computer Vision Engineer"} key="ogtitle" />
+                    <meta property="og:image" content="https://aaronespasa-portfolio-bucket.s3.eu-west-3.amazonaws.com/open-graph-image-450-300.png" key="ogimage"/>
+                    <meta property="og:image:type" content="image/png" key="ogimagetype" />
+                    <meta property="og:image:width" content="450" key="ogimagewidth" />
+                    <meta property="og:image:height" content="300" key="ogimageheight" />
+                    <meta property="og:image:alt" content="Aaron Espasandin portfolio banner" key="ogimagealt" />
+                    <meta property="og:site_name" content="Aaron Espasandin -- Computer Vision Engineer" key="ogsitename"/>
+                    <meta property="og:title" content={"Aaron Espasandin -- Computer Vision Engineer"} key="ogtitle" />
                     <meta property="og:description" content={metaDescription} key="ogdescription" />
-                    <meta property="og:type" content="website" />
+                    <meta property="og:type" content="website" key="ogwebtype" />
+                    <meta property="og:locale" content="en_US" key="oglocale" />
+
 
                     {/* SEO */}
                     <meta charSet="UTF-8" key="charset" />
