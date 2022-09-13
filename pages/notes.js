@@ -38,6 +38,16 @@ const Works = () => {
         }
     ]
 
+    const statisticsPdf = [
+        {
+            title: "Statistics (Theory + Exercises)",
+            folderName: "statistics",
+            fileName: "statistics",
+            pdfUrl: bucketUrl + "statistics.pdf",
+            key: "ST"
+        }
+    ]
+
     return (
         <Layout title="Notes" pageUrl="notes">
             <Container>
@@ -79,6 +89,17 @@ const Works = () => {
                        Notes of <strong>a whole Discrete Mathematics university course</strong>:
                     </Paragraph>
                     <EmblaCarousel slides={discreteMathPdfs} />
+                </Section>
+
+                {/* Statistics Section */}
+                <Section delay={0.6}>
+                    <Heading as="h3" variant="section-title">
+                        Statistics
+                    </Heading>
+                    <Paragraph>
+                       Notes of <strong>a whole Statistics university course</strong>:
+                    </Paragraph>
+                    <EmblaCarousel slides={statisticsPdf} />
                 </Section>
                 
                 <Footer />
