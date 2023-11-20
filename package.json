@@ -1,43 +1,37 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "@aaronespasa portfolio",
-  "directories": {
-    "lib": "lib"
-  },
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0",
+    "dev": "next dev",
     "build": "next build",
-    "prettier": "prettier -write .",
+    "start": "next start",
     "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aaronespasa/portfolio.git"
-  },
-  "keywords": [],
-  "author": "Aaron Espasandin",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/aaronespasa/portfolio/issues"
-  },
-  "homepage": "https://github.com/aaronespasa/portfolio#readme",
   "dependencies": {
-    "@chakra-ui/icons": "^1.1.0",
-    "@chakra-ui/react": "^1.7.0",
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "embla-carousel-react": "^6.2.0",
-    "framer-motion": "^5.3.0",
-    "next": "^12.0.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "three": "^0.134.0"
+    "@react-email/components": "^0.0.11",
+    "@react-email/tailwind": "^0.0.12",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.5",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.12.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-vertical-timeline-component": "^3.6.0",
+    "resend": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^12.0.3",
-    "prettier": "^2.4.1"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-vertical-timeline-component": "^3.3.6",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
