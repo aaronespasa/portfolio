@@ -5,6 +5,9 @@ import { LuGraduationCap } from "react-icons/lu";
 import paintwallImg from "@/public/project/cover/paintwall.jpg";
 import richiImg from "@/public/project/cover/richi.png";
 import rentmateImg from "@/public/project/cover/rentmate.png";
+import deepfakeDetectionImg from "@/public/project/cover/deepfake-detection.png";
+import imagecaptioningImg from "@/public/project/cover/image-captioning.png";
+import computerVisionWebImg from "@/public/project/cover/computervision-web.png";
 
 export const links = [
   {
@@ -44,30 +47,71 @@ export const experiencesData = [
   },
 ] as const;
 
+export const OPTIONS = ["all", "ml", "db", "se", "web"] as const;
+
 export const projectsData = [
   {
     title: "PaintWall",
+    slug: "paintwall",
     description:
       "Mobile application to colorize walls using augmented reality.",
     tags: ["PyTorch", "C++", "Swift", "Python"],
-    inProgress: true,
+    category: ["ml"],
+    // puntuation, date
+    score: 8,
     imageUrl: paintwallImg,
   },
   {
-    title: "Vodafone's RAG Model",
+    title: "Research Buddy",
+    slug: "research-buddy",
     description:
-      "Vodafone's Innovation Team Chatbot to help researchers find information about their projects.",
+      "Vodafone's RAG Model (Chatbot) to help researchers find information about their projects.",
     tags: ["React", "NextJS 13", "Langchain", "AWS", "Python", "Flask"],
-    inProgress: false,
+    category: ["web"],
+    score: 9,
+    date: "Sept. 2023",
     imageUrl: richiImg
   },
   {
     title: "RentMate",
+    slug: "rentmate",
     description:
       "Regression model based on transformers with explainability to predict the price of a house.",
     tags: ["React", "NextJS 13", "PyTorch", "AWS"],
-    inProgress: true,
+    category: ["web"],
+    score: 7,
     imageUrl: rentmateImg
+  },
+  {
+    title: "DeepFake Detection",
+    slug: "deepfake-detection",
+    description:
+      "DeepFake detection model based on an image classifier with explainability.",
+    tags: ["PyTorch", "Python"],
+    category: ["ml"],
+    score: 6,
+    date: "June 2022",
+    imageUrl: deepfakeDetectionImg
+  },
+  {
+    title: "Image Captioning",
+    slug: "image-captioning",
+    description:
+      "Image captioning model (CNN + RNN) to help blind people understand images on the internet.",
+    tags: ["PyTorch", "Python"],
+    category: ["ml"],
+    score: 4.5,
+    date: "May 2021",
+    imageUrl: imagecaptioningImg
+  },
+  {
+    title: "Computer Vision Web",
+    slug: "computer-vision-web",
+    description: "E-learning platform to learn about computer vision.",
+    tags: ["React", "NextJS 13", "Prisma", "PostgreSQL", "Python", "Django"],
+    category: ["web"],
+    score: 8,
+    imageUrl: computerVisionWebImg
   }
 ] as const;
 
