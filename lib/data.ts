@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import paintwallImg from "@/public/project/cover/paintwall.jpg";
+import richiImg from "@/public/project/cover/richi.png";
+import rentmateImg from "@/public/project/cover/rentmate.png";
 
 export const links = [
   {
@@ -49,10 +49,26 @@ export const projectsData = [
     title: "PaintWall",
     description:
       "Mobile application to colorize walls using augmented reality.",
-    tags: ["PyTorch", "C++"],
+    tags: ["PyTorch", "C++", "Swift", "Python"],
     inProgress: true,
-    // imageUrl: corpcommentImg,
+    imageUrl: paintwallImg,
   },
+  {
+    title: "Vodafone's RAG Model",
+    description:
+      "Vodafone's Innovation Team Chatbot to help researchers find information about their projects.",
+    tags: ["React", "NextJS 13", "Langchain", "AWS", "Python", "Flask"],
+    inProgress: false,
+    imageUrl: richiImg
+  },
+  {
+    title: "RentMate",
+    description:
+      "Regression model based on transformers with explainability to predict the price of a house.",
+    tags: ["React", "NextJS 13", "PyTorch", "AWS"],
+    inProgress: true,
+    imageUrl: rentmateImg
+  }
 ] as const;
 
 export const skillsData = [
