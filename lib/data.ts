@@ -57,7 +57,7 @@ export const projectsData = [
       "Mobile application to colorize walls using augmented reality.",
     tags: ["PyTorch", "C++", "Swift", "Python"],
     category: ["ml"],
-    // puntuation, date
+    date: null,
     score: 8,
     imageUrl: paintwallImg,
   },
@@ -68,8 +68,8 @@ export const projectsData = [
       "Vodafone's RAG Model (Chatbot) to help researchers find information about their projects.",
     tags: ["React", "NextJS 13", "Langchain", "AWS", "Python", "Flask"],
     category: ["web"],
-    score: 9,
     date: "Sept. 2023",
+    score: 9,
     imageUrl: richiImg
   },
   {
@@ -79,6 +79,7 @@ export const projectsData = [
       "Regression model based on transformers with explainability to predict the price of a house.",
     tags: ["React", "NextJS 13", "PyTorch", "AWS"],
     category: ["web"],
+    date: null,
     score: 7,
     imageUrl: rentmateImg
   },
@@ -100,8 +101,8 @@ export const projectsData = [
       "Image captioning model (CNN + RNN) to help blind people understand images on the internet.",
     tags: ["PyTorch", "Python"],
     category: ["ml"],
-    score: 4.5,
     date: "May 2021",
+    score: 4.5,
     imageUrl: imagecaptioningImg
   },
   {
@@ -110,10 +111,11 @@ export const projectsData = [
     description: "E-learning platform to learn about computer vision.",
     tags: ["React", "NextJS 13", "Prisma", "PostgreSQL", "Python", "Django"],
     category: ["web"],
+    date: null,
     score: 8,
     imageUrl: computerVisionWebImg
   }
-] as const;
+];
 
 export const skillsData = [
   "HTML",

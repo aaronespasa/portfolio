@@ -6,8 +6,7 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { FaCheck, FaHammer   } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "framer-motion";
-
-type ProjectProps = (typeof projectsData)[number] & { isEven: boolean; date?: string; };
+type ProjectProps = (typeof projectsData)[number] & { isEven: boolean; };
 
 export default function Project({
   title,
@@ -35,6 +34,12 @@ export default function Project({
       }}
       className="group mb-3 sm:mb-8 last:mb-0"
       layout
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: 100, opacity: 0 }}
+      transition={{
+        y: { type: "spring", stiffness: 100, damping: 12 },
+      }}
     >
       <Link href={`work/${slug}`}>
         <section className="bg-gray-100 relattive max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8">
@@ -43,10 +48,10 @@ export default function Project({
             className={`absolute top-0 ${isEven ? "right-0 rounded-bl-lg" : "left-0 rounded-br-lg" } text-[0.6rem] uppercase tracking-wider py-1 px-2
                       bg-gray-50 group-hover:bg-gray-100 transition text-[#64748B] shadow-[0_0_15px_0_rgba(100,116,139,0.24)] flex gap-x-[0.4rem] items-center`}
           >
-            {date === undefined ? <><FaHammer/> Ongoing</> : <><FaCheck /> {date}</>}
+            {date === null ? <><FaHammer/> Ongoing</> : <><FaCheck /> {date}</>}
           </div>
           <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-            <h3 className="text-xl font-semibold">{title}</h3>
+            <h3 className="text-xl font-semibold mt-4 sm:mt-0">{title}</h3>
             <p className="mt-2 leading-relaxed text-gray-700">
               {description}
             </p>
