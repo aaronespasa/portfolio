@@ -12,28 +12,28 @@ import computerVisionWebImg from "@/public/project/cover/computervision-web.png"
 export const links = [
   {
     name: "Home",
-    hash: "#home",
+    hash: "/#home",
   },
   {
     name: "About",
-    hash: "#about",
+    hash: "/#about",
   },
   {
     name: "Projects",
-    hash: "#projects",
+    hash: "/#projects",
   },
   {
     name: "Skills",
-    hash: "#skills",
+    hash: "/#skills",
   },
   {
     name: "Experience",
-    hash: "#experience",
+    hash: "/#experience",
   },
   {
     name: "Contact",
-    hash: "#contact",
-  },
+    hash: "/#contact",
+  }
 ] as const;
 
 export const experiencesData = [
@@ -47,7 +47,7 @@ export const experiencesData = [
   },
 ] as const;
 
-export const OPTIONS = ["all", "ml", "db", "se", "web"] as const;
+export const projectCategories = ["ml", "db", "se", "web"] as const;
 
 export const projectsData = [
   {
