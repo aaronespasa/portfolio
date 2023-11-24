@@ -42,7 +42,7 @@ export default function Project({
       }}
     >
       <Link href={`work/${slug}`}>
-        <section className="bg-gray-100 relattive max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8">
+        <section className="bg-gray-100 relative max-w-[42rem] border border-black/5 hover:border-gray-300 rounded-lg overflow-hidden sm:pr-8 sm:h-[20rem] hover:bg-gray-200 transition duration-200 sm:group-even:pl-8">
           {/* tag of the date, at the left when odd and right when even */}
           <div
             className={`absolute top-0 ${isEven ? "right-0 rounded-bl-lg" : "left-0 rounded-br-lg" } text-[0.6rem] uppercase tracking-wider py-1 px-2

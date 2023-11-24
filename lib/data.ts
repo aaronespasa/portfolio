@@ -8,31 +8,38 @@ import rentmateImg from "@/public/project/cover/rentmate.png";
 import deepfakeDetectionImg from "@/public/project/cover/deepfake-detection.png";
 import imagecaptioningImg from "@/public/project/cover/image-captioning.png";
 import computerVisionWebImg from "@/public/project/cover/computervision-web.png";
+import { GoHome, GoPerson, GoCodeSquare, GoTools, GoBriefcase, GoComment } from "react-icons/go";
 
 export const links = [
   {
     name: "Home",
     hash: "/#home",
+    icon: React.createElement(GoHome),
   },
   {
     name: "About",
     hash: "/#about",
+    icon: React.createElement(GoPerson),
   },
   {
     name: "Projects",
     hash: "/#projects",
+    icon: React.createElement(GoCodeSquare),
   },
   {
     name: "Skills",
     hash: "/#skills",
+    icon: React.createElement(GoTools),
   },
   {
     name: "Experience",
     hash: "/#experience",
+    icon: React.createElement(GoBriefcase),
   },
   {
     name: "Contact",
     hash: "/#contact",
+    icon: React.createElement(GoComment),
   }
 ] as const;
 
