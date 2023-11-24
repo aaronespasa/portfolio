@@ -28,7 +28,7 @@ export default function ContactFormEmail({
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
-            <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
+            <Section className="bg-white border border-black/10 my-10 px-10 py-4 rounded-md">
               <Heading className="leading-tight">
                 {senderEmail} sent you a message from aaronespasa.com by the contact form:
               </Heading>

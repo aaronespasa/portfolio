@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { useSectionInView } from "@/lib/hooks";
 import { PiCursorFill } from "react-icons/pi";
 
@@ -42,6 +43,17 @@ export default function Projects() {
   const [selected, setSelected] = useState<string>("all");
   const [projects, setProjects] = useState<typeof projectsData>(projectsData); // .sort((a, b) => b.score - a.score)
   const [hasUserClickedInMl, setHasUserClickedInMl] = useState<boolean>(false);
+
+  // animate the cursor animation and element hover at the same time
+  const controls = useAnimation();
+  const [ref1, inView1] = useInView();
+  const [ref2, inView2] = useInView();
+
+  useEffect(() => {
+        if (inView1 && inView2 && !hasUserClickedInMl) {
+            controls.start('visible');
+        }
+    }, [inView1, inView2, hasUserClickedInMl, controls]);
 
   useEffect(() => {
     if (selected == "all") {
@@ -119,7 +131,8 @@ export default function Projects() {
                         ${selected == "ml" && "!border-gray-700 !bg-gray-800 text-white hover:bg-gray-700"} `}
               onClick={() => {setSelected("ml"); setHasUserClickedInMl(true)}}
               variants={elementHoverVariants}
-              whileInView={hasUserClickedInMl ? "normal" : "visible"}
+              animate={controls}
+              ref={ref1}
           >
             <div className={`absolute top-0 right-0 rounded-bl-lg rounded-tr-lg text-[0.6rem] uppercase tracking-wider px-2 leading-4 flex gap-x-[0.4rem] items-center
                             bg-gray-50 group-hover:bg-gray-100 transition duration-300 ease-out text-[#64748B] shadow-[0_0_15px_0_rgba(100,116,139,0.24)]
@@ -130,8 +143,9 @@ export default function Projects() {
             <motion.div
               initial={{ scale: 0, scaleZ: 0, opacity: 0, x: "200%", y: "150%", rotate: 0 }}
               variants={cursorClickVariants}
-              whileInView={hasUserClickedInMl ? "hidden" : "visible"}
-              className="absolute bottom-0 right-0 "
+              animate={controls}
+              className="absolute bottom-0 right-0"
+              ref={ref2}
             >
               <PiCursorFill className="w-6 h-6 text-gray-800" />
             </motion.div>

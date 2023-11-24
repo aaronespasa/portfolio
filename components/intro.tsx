@@ -147,7 +147,7 @@ export default function Intro() {
         <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105
-                    hover:bg-gray-950 hover:text-gray-200 active:scale-95 transition"
+                    hover:bg-gray-950 hover:text-gray-200 active:scale-95 transition shadow-sm"
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
@@ -158,8 +158,8 @@ export default function Intro() {
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 border border-transparent hover:bg-[#FFF4F1]
-                   hover:border-[#F24E1E]/30 hover:text-[#F24E1E] hover:scale-105 active:scale-95 transition cursor-pointer borderBlack"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 border border-black/10 shadow-sm hover:bg-[#FFF4F1]
+                   hover:border-[#F24E1E]/30 hover:text-[#F24E1E] hover:scale-105 active:scale-95 transition cursor-pointer"
           href="/CV_Aaron_Espasandin.pdf"
           download
         >
@@ -168,7 +168,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 border border-transparent hover:bg-[#F1F8FF] hover:text-[#0A66C2] hover:border-[#0A66C2]/30
+          className="bg-white p-4 text-gray-700 border border-black/10 shadow-sm hover:bg-[#F1F8FF] hover:text-[#0A66C2] hover:border-[#0A66C2]/30
                        flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer"
           href="https://www.linkedin.com/in/aaronespasa/"
           target="_blank"
@@ -177,7 +177,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full border border-transparent hover:border-[#222222]/30
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full border border-black/10 shadow-sm hover:border-[#222222]/30
                      focus:scale-[1.15] hover:scale-[1.15] hover:bg-[#F2F2F2] hover:text-[#222222] active:scale-105 transition cursor-pointer"
           href="https://github.com/aaronespasa"
           target="_blank"
