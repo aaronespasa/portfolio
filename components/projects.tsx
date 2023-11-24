@@ -135,8 +135,8 @@ export default function Projects() {
           {/* <Option isTop5={true} option="ml" selected={selected} setSelected={setSelected}></Option> */}
           <motion.li className={`relative group text-xs w-24 sm:text-sm  sm:w-28 p-2 text-center aspect-square flex items-center justify-center cursor-pointer select-none
                         border border-black/10 bg-gray-100 text-gray-700 rounded-lg mb-6
-                        transition duration-300 ease-out hover:scale-95 active:scale-105 hover:bg-gray-200 hover:border-gray-400
-                        ${selected == "ml" && "!border-gray-700 !bg-gray-800 text-white hover:bg-gray-700"} `}
+                        transition duration-300 ease-out hover:!scale-95 active:!scale-105 hover:!bg-gray-200 hover:!border-gray-400
+                        ${selected == "ml" && "!border-gray-700 !bg-gray-800 text-white hover:!bg-gray-700"} `}
               onClick={() => {setSelected("ml"); setHasUserClickedInMl(true)}}
               variants={elementHoverVariants}
               animate={controls1}
