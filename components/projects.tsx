@@ -82,6 +82,7 @@ export default function Projects() {
     visible: {
       backgroundColor: ["rgb(243, 244, 246)", "rgb(243, 244, 246)", "rgb(243, 244, 246)", "rgb(229, 231, 235)", "rgb(243, 244, 246)", "rgb(243, 244, 246)"],
       borderColor: ["rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.8)", "rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1)"],
+      scale: [1, 1, 1, 0.85, 1, 1],
       transition: {
         times: [0, 0.3, 0.5, 0.6, 0.7, 1],
         duration: 3,
