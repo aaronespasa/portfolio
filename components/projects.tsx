@@ -45,15 +45,22 @@ export default function Projects() {
   const [hasUserClickedInMl, setHasUserClickedInMl] = useState<boolean>(false);
 
   // animate the cursor animation and element hover at the same time
-  const controls = useAnimation();
+  const controls1 = useAnimation();
+  const controls2 = useAnimation();
   const [ref1, inView1] = useInView();
   const [ref2, inView2] = useInView();
 
   useEffect(() => {
-        if (inView1 && inView2 && !hasUserClickedInMl) {
-            controls.start('visible');
-        }
-    }, [inView1, inView2, hasUserClickedInMl, controls]);
+      if (inView1 && inView2) {
+          if (!hasUserClickedInMl) {
+              controls1.start('visible');
+              controls2.start('visible');
+          } else {
+              controls1.start('normal');
+              controls2.start('hidden');
+          }
+      }
+  }, [inView1, inView2, hasUserClickedInMl, controls1, controls2]);
 
   useEffect(() => {
     if (selected == "all") {
@@ -104,6 +111,7 @@ export default function Projects() {
     },
     normal: {
       opacity: 1,
+      scale: 1,
     }
   }
 
@@ -131,7 +139,7 @@ export default function Projects() {
                         ${selected == "ml" && "!border-gray-700 !bg-gray-800 text-white hover:bg-gray-700"} `}
               onClick={() => {setSelected("ml"); setHasUserClickedInMl(true)}}
               variants={elementHoverVariants}
-              animate={controls}
+              animate={controls1}
               ref={ref1}
           >
             <div className={`absolute top-0 right-0 rounded-bl-lg rounded-tr-lg text-[0.6rem] uppercase tracking-wider px-2 leading-4 flex gap-x-[0.4rem] items-center
@@ -143,7 +151,7 @@ export default function Projects() {
             <motion.div
               initial={{ scale: 0, scaleZ: 0, opacity: 0, x: "200%", y: "150%", rotate: 0 }}
               variants={cursorClickVariants}
-              animate={controls}
+              animate={controls2}
               className="absolute bottom-0 right-0"
               ref={ref2}
             >
