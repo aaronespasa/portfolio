@@ -99,7 +99,7 @@ export default function Projects() {
 
   const elementHoverVariants = {
     visible: {
-      backgroundColor: ["rgb(243, 244, 246)", "rgb(243, 244, 246)", "rgb(243, 244, 246)", "rgb(229, 231, 235)", "rgb(243, 244, 246)", "rgb(243, 244, 246)"],
+      backgroundColor: ["#F3F4F6", "#F3F4F6", "#F3F4F6", "#E5E7EB", "#F3F4F6", "#F3F4F6"],
       borderColor: ["rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.8)", "rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1)"],
       scale: [1, 1, 1, 0.85, 1, 1],
       transition: {

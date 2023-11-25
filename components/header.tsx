@@ -43,7 +43,7 @@ export default function Header() {
   }, {} as {[key: string]: {title: string, description: string, slug: string}[]})
 
   return (
-    <header className="z-[999] relative">
+    <header className="z-[40] relative">
       {/* animate when isWorkSection changes */}
       <motion.div
         className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80
