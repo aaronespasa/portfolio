@@ -167,23 +167,25 @@ export default function Intro() {
           <HiDownload className="opacity-70 group-hover:scale-105 transition duration-0 fill-current" />
         </a>
 
-        <a
-          className="bg-white p-4 text-gray-700 border border-black/10 shadow-sm hover:bg-[#F1F8FF] hover:text-[#0A66C2] hover:border-[#0A66C2]/30
-                       flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer"
-          href="https://www.linkedin.com/in/aaronespasa/"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
+        <div className="flex gap-2">
+          <a
+            className="bg-white p-4 text-gray-700 border border-black/10 shadow-sm hover:bg-[#F1F8FF] hover:text-[#0A66C2] hover:border-[#0A66C2]/30
+                        flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer"
+            href="https://www.linkedin.com/in/aaronespasa/"
+            target="_blank"
+          >
+            <BsLinkedin />
+          </a>
 
-        <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full border border-black/10 shadow-sm hover:border-[#222222]/30
-                     focus:scale-[1.15] hover:scale-[1.15] hover:bg-[#F2F2F2] hover:text-[#222222] active:scale-105 transition cursor-pointer"
-          href="https://github.com/aaronespasa"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
+          <a
+            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full border border-black/10 shadow-sm hover:border-[#222222]/30
+                      focus:scale-[1.15] hover:scale-[1.15] hover:bg-[#F2F2F2] hover:text-[#222222] active:scale-105 transition cursor-pointer"
+            href="https://github.com/aaronespasa"
+            target="_blank"
+          >
+            <FaGithubSquare />
+          </a>
+        </div>
       </motion.div>
     </section>
   );
