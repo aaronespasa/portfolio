@@ -122,13 +122,13 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-8 px-3 text-2xl font-medium !leading-[1.5] sm:text-3xl"
+        className="mb-10 mt-8 px-3 text-xl font-medium !leading-[1.5] sm:text-3xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         I'm a{" "}<span className="font-bold">software engineer</span> specialized in{" "}
         <span className="italic">machine learning</span> and{" "}
-        <span className="italic">data-driven</span> solutions, skilled in{" "}<br/>
+        <span className="italic">data-driven</span> solutions, skilled in{" "}
         <span className="underline">React</span>,{" "}
         <span className="underline">PyTorch</span>,{" "}
         <span className="underline">AWS</span>,{" "}
@@ -137,7 +137,7 @@ export default function Intro() {
       </motion.h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-md lg:text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -146,7 +146,7 @@ export default function Intro() {
       >
         <Link
           href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105
+          className="group bg-gray-900 text-white px-6 py-2 lg:px-7 lg:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105
                     hover:bg-gray-950 hover:text-gray-200 active:scale-95 transition shadow-sm"
           onClick={() => {
             setActiveSection("Contact");
@@ -158,7 +158,7 @@ export default function Intro() {
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 border border-black/10 shadow-sm hover:bg-[#FFF4F1]
+          className="group bg-white px-6 py-2 lg:px-7 lg:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 border border-black/10 shadow-sm hover:bg-[#FFF4F1]
                    hover:border-[#F24E1E]/30 hover:text-[#F24E1E] hover:scale-105 active:scale-95 transition cursor-pointer"
           href="/CV_Aaron_Espasandin.pdf"
           download

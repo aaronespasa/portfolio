@@ -40,11 +40,11 @@ type BaseCardProps = React.PropsWithChildren<{
 const BaseCard: React.FC<BaseCardProps> = ({ children, customClassName, gridClassName, className, itemId, handleCardClick, active }) => {  
   return (
     <motion.li layoutId={itemId} onClick={() => handleCardClick(itemId)}
-      className={`group text-xs sm:text-sm p-2 w-full h-full flex items-center justify-center
+      className={`group text-xs sm:text-sm w-full h-full flex items-center justify-center
                 border border-black/10 bg-gray-100 text-gray-700 rounded-lg
                 ${customClassName}
                 ${gridClassName}
-                ${active ? className : "cursor-pointer select-none"}`}
+                ${active ? className + " p-4" : "cursor-pointer select-none p-2"}`}
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
       viewport={{ once: true }}
@@ -107,17 +107,19 @@ type ContentLayoutProps = React.PropsWithChildren<{
   title: string,
   active: boolean,
   shortDescription: React.ReactNode,
+  openImage: (imageSrc: string) => void
 }>;
 
-const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, className, image1, image2, image3, title, active, shortDescription }) => {
+const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, className, image1, image2, image3, openImage, title, active, shortDescription }) => {
   const ContentImage = ({ image, number, placeholder, customClassName }: { image: StaticImageData, number: 1|2|3, placeholder: boolean, customClassName?: string }) => {
     const isVertical = layout === "images-top"
     return (
       <figure key={image.src}
-                     className={`transform w-16 h-16 transition-all duration-200 ease-out
-                     ${active ? "w-20 h-20 lg:w-32 lg:h-32" : "md:w-20 md:h-20 lg:w-24 lg:h-24"}
-                     ${customClassName}
-                     `}
+              className={`transform w-16 h-16 transition-all duration-200 ease-out
+              ${active ? "w-20 h-20 lg:w-32 lg:h-32 cursor-pointer hover:scale-95 hover:contrast-125" : "md:w-20 md:h-20 lg:w-24 lg:h-24 pointer-events-none"}
+              ${customClassName}
+              `}
+              onClick={() => openImage(image.src)}
       >
         <Image src={image} alt={title} placeholder={placeholder ? "blur" : "empty"}
              className={`rounded-lg shadow-md w-16 h-16
@@ -129,7 +131,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, classNa
 
   return (
     <motion.div
-      className={`gap-y-2 gap-x-7 w-full h-full border-2 border-green-500
+      className={`gap-y-2 gap-x-7 w-full h-full
         ${(layout === "images-top" && !active) && "grid grid-cols-1 items-center justify-start"}
         ${(layout === "images-left" && !active) && "grid grid-cols-[2fr_3fr] lg:grid-cols-[1fr_2fr]"}
         ${(layout === "images-right" && !active) && "grid grid-cols-[3fr_2fr] lg:grid-cols-[2fr_1fr]"}
@@ -137,7 +139,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, classNa
       `}
     >
       {/* min-h-[136px] = 96px from the image height and the rest to take into account the other two images translation in the y-axis */}
-      <div key="image-group" className={`flex justify-center align-center relative border border-red-500 min-w-[64px] lg:min-w-[96px] w-full
+      <div key="image-group" className={`flex justify-center align-center relative min-w-[64px] lg:min-w-[96px] w-full
                              ${(layout === "images-right" && !active) && "sm:order-2"}
                              ${active ? "min-h-[100px] md:min-h-[140px]" : "min-h-[96px] lg:min-h-[136px]"}
       `}>
@@ -165,7 +167,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, classNa
         />
       </div>
       <motion.div key="content-group"
-                  className={`w-full h-full border border-blue-500
+                  className={`w-full h-full
                     ${(layout === "images-left" || layout === "images-right") && "flex flex-col items-center"}
                     ${!active && "justify-center"}
                   `}
@@ -181,6 +183,7 @@ const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, classNa
 export default function About() {
   const { ref } = useSectionInView("About");
   const [selectedId, setSelectedId] = useState<string|null>(null);
+  const [activeImage, setActiveImage] = useState<string|null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const toggleScrollLock = (lock: boolean) => {
@@ -201,6 +204,25 @@ export default function About() {
     toggleScrollLock(false);
   };
 
+  const openImage = (imageSrc: string) => {
+    setActiveImage(imageSrc);
+    toggleScrollLock(true);
+  };
+
+  const closeImage = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    setActiveImage(null);
+    toggleScrollLock(false);
+  };
+
+  const EnlargedImage = ({ src } : { src: string | null }) => {
+  if (!src) return null;
+  return (
+    <div className="fixed inset-0 bg-slate-900 bg-opacity-50 z-[100] flex justify-center items-center cursor-pointer" onClick={closeImage}>
+      <Image src={src} alt={src} className="w-[80vw] md:w-[60vw] max-h-[80vh] object-contain" width={1920} height={1080}/>
+    </div>
+  );
+};
+
   useEffect(() => {
     setIsMobile(window.innerWidth <= 640);
   }, []);
@@ -218,9 +240,10 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
+      <EnlargedImage src={activeImage} />
       <SectionHeading>About me</SectionHeading>
         <motion.ul className="grid grid-cols-1 gap-3 max-w-[60rem] w-full
-                              grid-rows-[repeat(14,_1fr)] sm:grid-cols-[6fr_6fr_5fr] sm:grid-rows-5 lg:grid-cols-[3fr_2fr_2fr_3fr] lg:grid-rows-4"
+                              grid-rows-[repeat(14,_1fr)] sm:grid-cols-[6fr_6fr_5fr] sm:grid-rows-4 lg:grid-cols-[3fr_2fr_2fr_3fr] lg:grid-rows-4"
         >
           <Card key="early-days" itemId="early-days" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
               gridClassName="grid row-start-1 row-end-3"
@@ -228,7 +251,7 @@ export default function About() {
           >
             <ContentLayout layout="images-top"
                            active={selectedId === "early-days"}
-                           image1={EarlyDay1} image2={EarlyDay2} image3={EarlyDay3}
+                           image1={EarlyDay1} image2={EarlyDay2} image3={EarlyDay3} openImage={openImage}
                            title="My Early Days & Hackathons"
                            shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
@@ -241,7 +264,7 @@ export default function About() {
           >
             <ContentLayout layout={isMobile ? "images-top" : "images-right"}
                            active={selectedId === "education"}
-                           image1={University1} image2={University2} image3={University3}
+                           image1={University1} image2={University2} image3={University3} openImage={openImage}
                            title="BSc Computer Science"
                            shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
@@ -254,7 +277,7 @@ export default function About() {
           > 
             <ContentLayout layout={isMobile ? "images-top" : "images-left"}
                            active={selectedId === "self-education-personal-projects"}
-                           image1={SelfEducation1} image2={SelfEducation2} image3={SelfEducation3}
+                           image1={SelfEducation1} image2={SelfEducation2} image3={SelfEducation3} openImage={openImage}
                            title="Self-Education & Personal Projects"
                            shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
@@ -267,7 +290,7 @@ export default function About() {
           >
             <ContentLayout layout={isMobile ? "images-top" : "images-left"}
                            active={selectedId === "professional-experience"}
-                           image1={ProfessionalExp1} image2={ProfessionalExp2} image3={ProfessionalExp3}
+                           image1={ProfessionalExp1} image2={ProfessionalExp2} image3={ProfessionalExp3} openImage={openImage}
                            title="Professional Experience"
                            shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
@@ -280,7 +303,7 @@ export default function About() {
           >
             <ContentLayout layout="images-top"
                            active={selectedId === "volunteering"}
-                           image1={Volunteering1} image2={Volunteering2} image3={Volunteering3}
+                           image1={Volunteering1} image2={Volunteering2} image3={Volunteering3} openImage={openImage}
                            title="Volunteering as Instructor on AI"
                            shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
@@ -293,7 +316,7 @@ export default function About() {
           >
             <ContentLayout layout="images-top"
                            active={selectedId === "hobbies"}
-                           image1={Hobbies1} image2={Hobbies2} image3={Hobbies3}
+                           image1={Hobbies1} image2={Hobbies2} image3={Hobbies3} openImage={openImage}
                            title="Hobbies"
                            shortDescription={<>This is a nice description. <b>You know right?</b></>}
             >
@@ -306,7 +329,7 @@ export default function About() {
           >
             <ContentLayout layout="images-top"
                            active={selectedId === "sports"}
-                           image1={Sports1} image2={Sports2} image3={Sports3}
+                           image1={Sports1} image2={Sports2} image3={Sports3} openImage={openImage}
                            title="Sports"
                            shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description.</>}
             >
