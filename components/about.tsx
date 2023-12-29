@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -27,7 +27,6 @@ import University3 from "@/public/about/university/image-3.webp"
 import Volunteering1 from "@/public/about/volunteering/image-1.webp"
 import Volunteering2 from "@/public/about/volunteering/image-2.gif"
 import Volunteering3 from "@/public/about/volunteering/image-3.webp"
-import { Content } from "next/font/google";
 
 type BaseCardProps = React.PropsWithChildren<{
     className?: string,
@@ -50,7 +49,6 @@ const BaseCard: React.FC<BaseCardProps> = ({ children, customClassName, gridClas
       whileInView={{ scale: 1 }}
       viewport={{ once: true }}
       whileHover={{
-        scale: active ? 1 : 0.95,
         backgroundColor: active ? "rgb(243, 244, 246)" : "#E5E7EB",
         borderColor: active ? "rgba(0,0,0,0.1)" : "#9CA3AF"
       }}
@@ -85,15 +83,14 @@ type CardProps = BaseCardProps & {
 const Card: React.FC<CardProps> = ({ children, gridClassName, customClassName, itemId, selectedId, handleCardClick, handleCloseCard }) => {
   return (
     <BaseCard gridClassName={gridClassName} itemId={itemId} handleCardClick={handleCardClick} active={selectedId === itemId} customClassName={customClassName}
-              className="z-50 fixed top-[20%] left-[10%] md:top-[15%] md:left-[15%] lg:left-1/4 mx-auto w-[80vw] h-[80v] max-w-[600px] max-h-[600px]" 
+              className="z-50 fixed top-[5%] left-[10%] lg:top-[10%] lg:left-1/4 mx-auto w-[80vw] !h-[80vh] max-w-[300px] max-h-[450px] md:max-w-[600px] lg:max-h-[600px]" 
     >
       { selectedId === itemId && (
         <button onClick={(e) => { e.stopPropagation(); handleCloseCard(); }}
-                className="absolute top-3 right-3 rounded-full w-7 h-7 p-1 bg-gray-600
+                className="z-50 absolute top-3 right-3 rounded-full w-7 h-7 p-1 bg-gray-600
                           hover:bg-gray-700 active:bg-gray-800 transition duration-200"
         >
-          <GoX className="w-full h-full text-gray-100" />
-
+          <GoX className="z-50 w-full h-full text-gray-100" />
         </button>
       )}
       {children}
@@ -107,48 +104,84 @@ type ContentLayoutProps = React.PropsWithChildren<{
   image1: StaticImageData,
   image2: StaticImageData,
   image3: StaticImageData,
-  title: string
+  title: string,
+  active: boolean,
+  shortDescription: React.ReactNode,
 }>;
 
-const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, className, image1, image2, image3, title }) => {
+const ContentLayout: React.FC<ContentLayoutProps> = ({ children, layout, className, image1, image2, image3, title, active, shortDescription }) => {
   const ContentImage = ({ image, number, placeholder, customClassName }: { image: StaticImageData, number: 1|2|3, placeholder: boolean, customClassName?: string }) => {
     const isVertical = layout === "images-top"
     return (
       <figure key={image.src}
-                     className={`absolute w-32 h-32 top-0 left-0
+                     className={`transform w-16 h-16 transition-all duration-200 ease-out
+                     ${active ? "w-20 h-20 lg:w-32 lg:h-32" : "md:w-20 md:h-20 lg:w-24 lg:h-24"}
                      ${customClassName}
                      `}
       >
         <Image src={image} alt={title} placeholder={placeholder ? "blur" : "empty"}
-             className={`rounded-lg object-cover shadow-md w-32 h-32`} />
+             className={`rounded-lg shadow-md w-16 h-16
+                        ${active ? "w-20 h-20 sm:w-32 sm:h-32 object-contain" : "md:w-20 md:h-20 lg:w-24 lg:h-24 object-cover"}
+             `} />
       </figure>
     )
   }
 
   return (
-    <div
-      className={`gap-2 w-full h-full
-        ${layout === "images-top" && "grid grid-col-1 items-center justify-start"}
-        ${layout === "images-left" && "grid sm:grid-cols-[1fr_2fr]"}
-        ${layout === "images-right" && "grid sm:grid-cols-[2fr_1fr]"}
+    <motion.div
+      className={`gap-y-2 gap-x-7 w-full h-full border-2 border-green-500
+        ${(layout === "images-top" && !active) && "grid grid-cols-1 items-center justify-start"}
+        ${(layout === "images-left" && !active) && "grid grid-cols-[2fr_3fr] lg:grid-cols-[1fr_2fr]"}
+        ${(layout === "images-right" && !active) && "grid grid-cols-[3fr_2fr] lg:grid-cols-[2fr_1fr]"}
+        ${active && "flex flex-col"}
       `}
     >
-      <div key="image-group" className="relative">
-        <ContentImage image={image1} placeholder={true} number={1} customClassName="z-10" />
-        <ContentImage image={image2} placeholder={image2 !== Volunteering2} number={2} customClassName="z-20" />
-        <ContentImage image={image3} placeholder={true} number={3} customClassName="z-10" />
+      {/* min-h-[136px] = 96px from the image height and the rest to take into account the other two images translation in the y-axis */}
+      <div key="image-group" className={`flex justify-center align-center relative border border-red-500 min-w-[64px] lg:min-w-[96px] w-full
+                             ${(layout === "images-right" && !active) && "sm:order-2"}
+                             ${active ? "min-h-[100px] md:min-h-[140px]" : "min-h-[96px] lg:min-h-[136px]"}
+      `}>
+        {/* TODO: add absolute class to the customClassName and try to put them in an appropiate position */}
+        <ContentImage image={image1} placeholder={true} number={1}
+                      customClassName={`z-10 -rotate-12
+                                      ${!active && "absolute top-1/2 left-1/2 sm:left-[60%] lg:left-1/2"}
+                                      ${!active && `-translate-x-[70%] -translate-y-[40%] sm:-translate-y-[45%] lg:-translate-y-[40%] group-hover:-translate-x-[95%] group-hover:-translate-y-[45%]
+                                                    group-hover:sm:-translate-y-[55%] group-hover:lg:-translate-y-[45%] group-hover:-rotate-[20deg]`}
+                                      ${active && "translate-y-4 -translate-x-4"}
+                      `}
+        />
+        <ContentImage image={image2} placeholder={image2 !== Volunteering2} number={2}
+                      customClassName={`z-20
+                                      ${!active && "absolute top-1/2 left-1/2 sm:left-[60%] lg:left-1/2"}
+                                      ${!active && "-translate-x-[50%] -translate-y-[50%] group-hover:-translate-y-[75%]"}
+                      `}
+        />
+        <ContentImage image={image3} placeholder={true} number={3}
+                      customClassName={`z-10 rotate-12
+                                      ${!active && "absolute top-1/2 left-1/2 sm:left-[60%] lg:left-1/2"}
+                                      ${!active && "-translate-x-[30%] -translate-y-[40%] group-hover:-translate-x-[5%] group-hover:-translate-y-[45%] group-hover:rotate-[20deg]"}
+                                      ${active && "translate-y-4 translate-x-4"}
+                      `}
+        />
       </div>
-      <motion.div key="content-group">
-        <h3 className="text-sm sm:text-base font-semibold">{title}</h3>
-        {children}
+      <motion.div key="content-group"
+                  className={`w-full h-full border border-blue-500
+                    ${(layout === "images-left" || layout === "images-right") && "flex flex-col items-center"}
+                    ${!active && "justify-center"}
+                  `}
+      >
+        <h3 className="text-sm sm:text-base font-semibold mb-1">{title}</h3>
+        <p className={`text-xs sm:text-sm text-gray-600 ${active && "hidden"}`}>{shortDescription}</p>
+        <div className={`text-xs sm:text-sm text-gray-600 ${!active && "hidden"}`}>{children}</div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 
 export default function About() {
   const { ref } = useSectionInView("About");
   const [selectedId, setSelectedId] = useState<string|null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const toggleScrollLock = (lock: boolean) => {
     if (lock) {
@@ -168,6 +201,10 @@ export default function About() {
     toggleScrollLock(false);
   };
 
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 640);
+  }, []);
+
 
   return (
     <motion.section
@@ -183,50 +220,58 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
         <motion.ul className="grid grid-cols-1 gap-3 max-w-[60rem] w-full
-                              grid-rows-[repeat(14,_1fr)] sm:grid-cols-[3fr_2fr_3fr] sm:grid-rows-5 lg:grid-cols-[3fr_2fr_2fr_3fr] lg:grid-rows-4"
+                              grid-rows-[repeat(14,_1fr)] sm:grid-cols-[6fr_6fr_5fr] sm:grid-rows-5 lg:grid-cols-[3fr_2fr_2fr_3fr] lg:grid-rows-4"
         >
           <Card key="early-days" itemId="early-days" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
               gridClassName="grid row-start-1 row-end-3"
               customClassName=""
           >
             <ContentLayout layout="images-top"
+                           active={selectedId === "early-days"}
                            image1={EarlyDay1} image2={EarlyDay2} image3={EarlyDay3}
                            title="My Early Days & Hackathons"
+                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
-              Description
+              This is the Early Days description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
           <Card key="education" itemId="education" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
               gridClassName="grid row-start-3 row-end-5 h-64 sm:row-auto sm:col-start-2 sm:col-end-4 lg:col-end-5 sm:aspect-[5/2]"
               customClassName=""
           >
-            <ContentLayout layout="images-right"
+            <ContentLayout layout={isMobile ? "images-top" : "images-right"}
+                           active={selectedId === "education"}
                            image1={University1} image2={University2} image3={University3}
                            title="BSc Computer Science"
+                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
-              Description
+              This is the Education description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
           <Card key="self-education-personal-projects" itemId="self-education-personal-projects" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
               gridClassName="grid row-start-5 row-end-7 sm:row-auto sm:col-start-2 sm:col-end-4 sm:row-start-2 lg:col-end-5 sm:aspect-[5/2]"
               customClassName=""
           > 
-            <ContentLayout layout="images-left"
-                            image1={SelfEducation1} image2={SelfEducation2} image3={SelfEducation3}
-                            title="Self-Education & Personal Projects"
+            <ContentLayout layout={isMobile ? "images-top" : "images-left"}
+                           active={selectedId === "self-education-personal-projects"}
+                           image1={SelfEducation1} image2={SelfEducation2} image3={SelfEducation3}
+                           title="Self-Education & Personal Projects"
+                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
-              Description
+              This is the Self-Education & Personal Projects description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
           <Card key="professional-experience" itemId="professional-experience" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
               gridClassName="grid row-start-7 row-end-[9] sm:row-auto sm:row-start-3 sm:col-start-1 sm:col-end-3 lg:col-end-4 sm:aspect-[5/2]"
               customClassName=""
           >
-            <ContentLayout layout="images-left"
+            <ContentLayout layout={isMobile ? "images-top" : "images-left"}
+                           active={selectedId === "professional-experience"}
                            image1={ProfessionalExp1} image2={ProfessionalExp2} image3={ProfessionalExp3}
                            title="Professional Experience"
+                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
-              Description
+              This is the Professional Experience description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
           <Card key="volunteering" itemId="volunteering" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -234,10 +279,12 @@ export default function About() {
               customClassName=""
           >
             <ContentLayout layout="images-top"
-                            image1={Volunteering1} image2={Volunteering2} image3={Volunteering3}
-                            title="Volunteering as Instructor on AI"
+                           active={selectedId === "volunteering"}
+                           image1={Volunteering1} image2={Volunteering2} image3={Volunteering3}
+                           title="Volunteering as Instructor on AI"
+                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
             >
-              Description
+              This is the Volunteering description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
           <Card key="hobbies" itemId="hobbies" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -245,21 +292,25 @@ export default function About() {
               customClassName=""
           >
             <ContentLayout layout="images-top"
-                            image1={Hobbies1} image2={Hobbies2} image3={Hobbies3}
-                            title="Hobbies"
+                           active={selectedId === "hobbies"}
+                           image1={Hobbies1} image2={Hobbies2} image3={Hobbies3}
+                           title="Hobbies"
+                           shortDescription={<>This is a nice description. <b>You know right?</b></>}
             >
-              Description
+              This is the Hobbies description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
           <Card key="sports" itemId="sports" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
               gridClassName="grid row-start-[13] row-end-[15] sm:row-start-4 sm:row-end-4 sm:col-start-1 sm:col-end-2 lg:col-start-2 lg:col-end-4"
               customClassName=""    
           >
-            <ContentLayout layout="images-right"
+            <ContentLayout layout="images-top"
+                           active={selectedId === "sports"}
                            image1={Sports1} image2={Sports2} image3={Sports3}
                            title="Sports"
+                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description.</>}
             >
-              Description
+              This is the Sports description. You can <b>bold</b> any text here.
             </ContentLayout>
           </Card>
         </motion.ul>
