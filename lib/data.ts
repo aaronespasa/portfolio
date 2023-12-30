@@ -110,7 +110,7 @@ export const projectsData = [
     category: ["ml"],
     tags: ["Deep Learning", "Computer Vision", "Augmented Reality"],
     contributors: ["Dario Caballero", "Carlos Iborra", "Martin Shao"],
-    date: "Sept. 2023",
+    date: null,
     score: 8,
     imageUrl: paintwallImg,
     links: [

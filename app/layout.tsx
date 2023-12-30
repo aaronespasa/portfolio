@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗒️</text></svg>"></link>
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36`}
+        className={`${inter.className} bg-gray-50 text-gray-950 relative`}
       >
         <ActiveSectionContextProvider>
           <Header />

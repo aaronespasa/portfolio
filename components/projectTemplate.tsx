@@ -31,11 +31,27 @@ export const Callout = ({ tag, type, children }: CalloutProps) => {
 const CoverBackground = ({ src, title, children }: { src: string, title: string, children: React.ReactNode }) => {
     return (
         <div className="relative w-full h-full">
-            <div className="h-full w-full absolute -top-36 left-0 pointer-events-none z-0">
+            <div className="h-full w-full absolute -top-12 left-0 pointer-events-none z-0">
                 <Image src={src} alt={title + " cover"} fill sizes="100vw" className="object-cover mix-blend-multiply" />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/60 -z-[2]"></div>
                 {/* Gradient Mask */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-gray-50 via-50% via-transparent to-transparent"></div>
+                {/* <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-gray-50 via-20% via-transparent to-transparent"></div> */}
+                {/* div for inverted border radius */}
+                <div className="w-[min(100%,20rem)] md:w-[min(100%,38rem)] h-8 bg-gray-50 absolute bottom-0 left-1/2 -translate-x-1/2 box-content">
+                    <div className="absolute bottom-0 -left-6 w-6 aspect-square rotate-180"
+                         style={{
+                            backgroundImage: "radial-gradient(circle at 100% 100%, transparent 24px, rgb(249,250,251) 4px)",
+                         }}>
+
+                    </div>
+                    <div className="absolute bottom-0 -right-6 w-6 aspect-square rotate-[270deg]"
+                         style={{
+                            backgroundImage: "radial-gradient(circle at 100% 100%, transparent 24px, rgb(249,250,251) 4px)",
+                         }}>
+
+                    </div>
+
+                </div>
             </div>
             {children}
         </div>
@@ -59,8 +75,8 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
     return (
         <>
             <CoverBackground src={image.src} title={title}>
-                <div className="h-full flex flex-col items-center relative z-10">
-                    <div className="w-[min(100%,20rem)] md:w-[min(100%,38rem)] -mt-8">
+                <div className="h-full flex flex-col items-center relative z-10 pt-28">
+                    <div className="w-[min(100%,20rem)] md:w-[min(100%,38rem)]">
                         <div className="flex flex-wrap gap-2 mb-4">
                             {tags.map((tag, index) => (
                                 <div key={index} className="relative bg-slate-500/70 text-gray-50 border border-slate-300/70 backdrop-blur-sm selection:bg-slate-700
@@ -94,12 +110,11 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
                                     </Link>
                                 ))}
                             </div>
-                        
                         )}
                         {contributorsData.length > 0 && (
                             <>
                                 <div className="flex items-center space-x-2 text-base mb-2">
-                                    <h4 className="font-medium text-gray-200 uppercase tracking-wider text-xs">Other Contributors</h4>
+                                    <h4 className="font-medium text-gray-200 uppercase tracking-wider text-xs selection:bg-slate-700">Other Contributors</h4>
                                     <span className="rounded-full bg-slate-500/70 text-gray-50 px-[0.33rem] py-1 text-[0.5rem] leading-[0.5rem] font-semibold ">{contributors.length}</span>
                                 </div>
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -123,6 +138,8 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
                                 </div>
                             ))}
                         </div> */}
+
+
                         <div className="relative overflow-hidden text-base bg-gray-50 rounded-md pt-12 pb-6 px-4 selection:bg-slate-300">
                             <div className={`absolute top-0 right-0 rounded-bl-lg text-[0.6rem] uppercase tracking-wider py-1 px-2
                                            shadow-[0_0_15px_0_rgba(100,116,139,0.24)] flex gap-x-[0.4rem] items-center font-medium border-b border-l

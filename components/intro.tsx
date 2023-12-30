@@ -69,7 +69,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] pt-36"
     >
       {/* <358, 247>, <130, 270> */}
         <div className="bg-[hsl(358,76%,94%)] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
