@@ -11,7 +11,7 @@ type ProjectProps = (typeof projectsData)[number] & { isEven: boolean; };
 export default function Project({
   title,
   description,
-  tags,
+  skills,
   imageUrl,
   date,
   slug,
@@ -56,12 +56,12 @@ export default function Project({
               {description}
             </p>
             <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-              {tags.map((tag, index) => (
+              {skills.map((skill, index) => (
                 <li
                   className="relative bg-white group-hover:bg-gray-100 transition text-[#64748B] shadow-[0_5px_3px_-3px_rgba(100,116,139,0.24)] px-3 py-1 text-[0.6rem] uppercase tracking-wider rounded-md"
                   key={index}
                 >
-                  {tag}
+                  {skill}
                 </li>
               ))}
             </ul>

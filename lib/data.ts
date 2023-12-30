@@ -9,6 +9,7 @@ import deepfakeDetectionImg from "@/public/project/cover/deepfake-detection.png"
 import imagecaptioningImg from "@/public/project/cover/image-captioning.png";
 import computerVisionWebImg from "@/public/project/cover/computervision-web.png";
 import { GoHome, GoPerson, GoCodeSquare, GoTools, GoBriefcase, GoComment } from "react-icons/go";
+import { FiGithub, FiYoutube, FiGlobe  } from "react-icons/fi";
 
 export const links = [
   {
@@ -56,71 +57,228 @@ export const experiencesData = [
 
 export const projectCategories = ["ml", "db", "se", "web"] as const;
 
+export const contributorsInfo = [
+  {
+    name: "Dario Caballero",
+    linkedin: "https://www.linkedin.com/in/dario-caballero/",
+    imageName: "dario-caballero.png"
+  },
+  {
+    name: "Carlos Iborra",
+    linkedin: "https://www.linkedin.com/in/carlos-iborra/",
+    imageName: "carlos-iborra.jpg"
+  },
+  {
+    name: "Martin Shao",
+    linkedin: "https://www.linkedin.com/in/martin-shao-he-55828a208/",
+    imageName: "martin-shao.jpg"
+  },
+  {
+    name: "Alejandro García",
+    linkedin: "https://www.linkedin.com/in/alejandro-garc%C3%ADa-330199284/",
+    imageName: "alejandro-garcia.jpg"
+  },
+  {
+    name: "Lucas Gallego",
+    linkedin: "https://www.linkedin.com/in/lucas-gallego-bravo-0a6a47238/",
+    imageName: "lucas-gallego.jpg"
+  }
+]
+
+export const linkTypes = [
+  {
+    type: "web",
+    icon: React.createElement(FiGlobe),
+  },
+  {
+    type: "youtube",
+    icon: React.createElement(FiYoutube),
+  },
+  {
+    type: "github",
+    icon: React.createElement(FiGithub),
+  },
+]
+
 export const projectsData = [
   {
     title: "PaintWall",
     slug: "paintwall",
     description:
       "Mobile application to colorize walls using augmented reality.",
-    tags: ["PyTorch", "C++", "Swift", "Python"],
+    skills: ["PyTorch", "C++", "Swift", "Python"],
     category: ["ml"],
-    date: null,
+    tags: ["Deep Learning", "Computer Vision", "Augmented Reality"],
+    contributors: ["Dario Caballero", "Carlos Iborra", "Martin Shao"],
+    date: "Sept. 2023",
     score: 8,
     imageUrl: paintwallImg,
+    links: [
+      {
+        name: "Demo",
+        type: "web",
+        url: "",
+      },
+      {
+        name: "Presentation",
+        type: "youtube",
+        url: "",
+      },
+      {
+        name: "GitHub",
+        type: "github",
+        url: "",
+      },
+    ]
   },
   {
     title: "Research Buddy",
     slug: "research-buddy",
     description:
       "Vodafone's RAG Model (Chatbot) to help researchers find information about their projects.",
-    tags: ["React", "NextJS 13", "Langchain", "AWS", "Python", "Flask"],
+    skills: ["React", "NextJS 13", "Langchain", "AWS", "Python", "Flask"],
     category: ["web"],
+    tags: ["Natural Language Processing", "Chatbot", "LLM"],
+    contributors: [],
     date: "Sept. 2023",
     score: 9,
-    imageUrl: richiImg
+    imageUrl: richiImg,
+    links: [
+      {
+        name: "Demo",
+        type: "web",
+        url: "",
+      },
+      {
+        name: "Presentation",
+        type: "youtube",
+        url: "",
+      },
+      {
+        name: "GitHub",
+        type: "github",
+        url: "",
+      },
+    ]
   },
   {
     title: "RentMate",
     slug: "rentmate",
     description:
       "Regression model based on transformers with explainability to predict the price of a house.",
-    tags: ["React", "NextJS 13", "PyTorch", "AWS"],
+    skills: ["React", "NextJS 13", "PyTorch", "AWS"],
+    tags: ["Deep Learning", "Multimodal Transformers", "Explainability"],
+    contributors: [],
     category: ["web"],
     date: null,
     score: 7,
-    imageUrl: rentmateImg
+    imageUrl: rentmateImg,
+    links: [
+      {
+        name: "Demo",
+        type: "web",
+        url: "",
+      },
+      {
+        name: "Presentation",
+        type: "youtube",
+        url: "",
+      },
+      {
+        name: "GitHub",
+        type: "github",
+        url: "",
+      },
+    ]
   },
   {
     title: "DeepFake Detection",
     slug: "deepfake-detection",
     description:
       "DeepFake detection model based on an image classifier with explainability.",
-    tags: ["PyTorch", "Python"],
+    skills: ["PyTorch", "Python"],
     category: ["ml"],
+    tags: ["Deep Learning", "Computer Vision", "DeepFakes", "Explainability"],
+    contributors: [],
     score: 6,
     date: "June 2022",
-    imageUrl: deepfakeDetectionImg
+    imageUrl: deepfakeDetectionImg,
+    links: [
+      {
+        name: "Demo",
+        type: "web",
+        url: "",
+      },
+      {
+        name: "Presentation",
+        type: "youtube",
+        url: "",
+      },
+      {
+        name: "GitHub",
+        type: "github",
+        url: "",
+      },
+    ]
   },
   {
     title: "Image Captioning",
     slug: "image-captioning",
     description:
       "Image captioning model (CNN + RNN) to help blind people understand images on the internet.",
-    tags: ["PyTorch", "Python"],
+    skills: ["PyTorch", "Python"],
     category: ["ml"],
+    tags: ["Deep Learning", "Computer Vision", "Natural Language Processing"],
+    contributors: [],
     date: "May 2021",
     score: 4.5,
-    imageUrl: imagecaptioningImg
+    imageUrl: imagecaptioningImg,
+    links: [
+      {
+        name: "Demo",
+        type: "web",
+        url: "",
+      },
+      {
+        name: "Presentation",
+        type: "youtube",
+        url: "",
+      },
+      {
+        name: "GitHub",
+        type: "github",
+        url: "",
+      },
+    ]
   },
   {
     title: "Computer Vision Web",
     slug: "computer-vision-web",
     description: "E-learning platform to learn about computer vision.",
-    tags: ["React", "NextJS 13", "PostgreSQL", "Python", "Django"],
+    skills: ["React", "NextJS 13", "PostgreSQL", "Python", "Django"],
     category: ["web"],
+    tags: ["Full Stack", "DB Modeling", "UI/UX Design"],
+    contributors: [],
     date: null,
     score: 8,
-    imageUrl: computerVisionWebImg
+    imageUrl: computerVisionWebImg,
+    links: [
+      {
+        name: "Demo",
+        type: "web",
+        url: "",
+      },
+      {
+        name: "Presentation",
+        type: "youtube",
+        url: "",
+      },
+      {
+        name: "GitHub",
+        type: "github",
+        url: "",
+      },
+    ]
   }
 ];
 

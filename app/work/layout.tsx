@@ -7,9 +7,10 @@ export default function WorkLayout({
 }) {
 
     return (
-        <div className="min-h-screen">
-            {/* <Sidebar /> */}
-            {children}
+        <div className="min-h-screen flex justify-center w-full">
+            <div className="relative w-full">
+                {children}
+            </div>
         </div>
     );
 }

@@ -71,6 +71,9 @@ export default function Intro() {
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
+      {/* <358, 247>, <130, 270> */}
+        <div className="bg-[hsl(358,76%,94%)] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
+        <div className="bg-[hsl(247,82%,91%)] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"></div>
       <div className="flex items-center justify-center relative">
         <div className="relative">
           <motion.div
@@ -129,11 +132,13 @@ export default function Intro() {
         I'm a{" "}<span className="font-bold">software engineer</span> specialized in{" "}
         <span className="italic">machine learning</span> and{" "}
         <span className="italic">data-driven</span> solutions, skilled in{" "}
-        <span className="underline">React</span>,{" "}
-        <span className="underline">PyTorch</span>,{" "}
-        <span className="underline">AWS</span>,{" "}
-        <span className="underline">SQL</span> &{" "}
-        <span className="underline">C++</span>.{" "}
+        <span className="sm:flex sm:justify-center">
+          <span className="underline">React</span>,&nbsp;
+          <span className="underline">PyTorch</span>,&nbsp;
+          <span className="underline">AWS</span>,&nbsp;
+          <span className="underline">SQL</span>&nbsp;&&nbsp;
+          <span className="underline">C++</span>.
+        </span>
       </motion.h1>
 
       <motion.div
