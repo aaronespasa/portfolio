@@ -32,7 +32,7 @@ const CoverBackground = ({ src, title, children }: { src: string, title: string,
     return (
         <div className="relative w-full h-full">
             <div className="h-full w-full absolute -top-12 left-0 pointer-events-none z-0">
-                <Image src={src} alt={title + " cover"} fill sizes="100vw" className="object-cover mix-blend-multiply" />
+                <Image src={src} alt={title + " cover"} fill sizes="100vw" className="object-cover mix-blend-multiply blur-[2px]" />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/60 -z-[2]"></div>
                 {/* Gradient Mask */}
                 {/* <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-gray-50 via-20% via-transparent to-transparent"></div> */}
@@ -68,7 +68,7 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
     const project = projectsData.find(project => project.slug === slug)
     if (!project) return null
     
-    const { title, tags, contributors, links, date } = project
+    const { title, tags, contributors, links, skills, date } = project
     // @ts-ignore
     const contributorsData = contributorsInfo.filter(contributor => contributors.includes(contributor.name))
 
@@ -90,19 +90,23 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
                         {links.length > 0 && (
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {links.map((link, index) => (
-                                    <Link href={link.url} key={index}
+                                    <Link href={link.url} key={index} target='_blank'
                                           className={`relative flex flex-col items-center justify-center gap-2 rounded-md w-24 aspect-square transform duration-200 ease-out hover:scale-95
-                                                      backdrop-blur-sm selection:bg-slate-700 font-medium group
+                                                      backdrop-blur-sm selection:bg-slate-700 font-medium group text-center
                                                       shadow-[0_5px_3px_-3px_rgba(100,116,139,0.24)] px-3 py-1 text-[0.6rem] uppercase tracking-wider
                                                       ${link.type === "github" && "bg-slate-800/50 text-gray-100 hover:text-white hover:bg-slate-500/70 border border-slate-400"}
                                                       ${link.type === "web" && "bg-blue-500/30 text-blue-200 hover:text-white hover:bg-blue-500/60 border border-blue-500"}
                                                       ${link.type === "youtube" && "bg-red-500/30 text-red-50 hover:text-white hover:bg-red-500/60 border border-red-500"}
+                                                      ${link.type === "docs" && "bg-teal-500/30 text-teal-50 hover:text-white hover:bg-teal-500/60 border border-teal-500"}
+                                                      ${link.type === "slides" && "bg-yellow-600/30 text-yellow-50 hover:text-white hover:bg-yellow-600/60 border border-yellow-600"}
                                                       `}>
                                         {link.name}
                                         <figure className={`text-3xl text-gray-300 transition-colors duration-200 ease-out
                                                             ${link.type === "github" && "text-gray-300 group-hover:text-white"}
                                                             ${link.type === "web" && "text-blue-200 group-hover:text-white"}
                                                             ${link.type === "youtube" && "text-red-200 group-hover:text-white"}
+                                                            ${link.type === "docs" && "text-teal-200 group-hover:text-white"}
+                                                            ${link.type === "slides" && "text-yellow-200 group-hover:text-white"}
                                         `}>
                                             {/* @ts-ignore */}
                                             {linkTypes.find(linkType => linkType.type === link.type).icon}
@@ -110,6 +114,22 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
                                     </Link>
                                 ))}
                             </div>
+                        )}
+                        {skills.length > 0 && (
+                            <>
+                                <div className="flex items-center space-x-2 text-base mt-2 mb-2">
+                                    <h4 className="font-medium text-gray-200 uppercase tracking-wider text-xs selection:bg-slate-700">Main Skills</h4>
+                                </div>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {skills.map((skill, index) => (
+                                        <div key={index} className="relative flex items-center gap-2 rounded-full
+                                                                  bg-slate-500/50 text-gray-100 border border-gray-500 backdrop-blur-sm selection:bg-slate-700
+                                                                    shadow-[0_5px_3px_-3px_rgba(100,116,139,0.24)] px-3 py-1 text-[0.6rem] uppercase tracking-wider">
+                                            {skill}
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
                         )}
                         {contributorsData.length > 0 && (
                             <>
@@ -130,16 +150,6 @@ const ProjectTemplate = ({ slug, intro, image, children }: ProjectTemplateProps)
                                 </div>
                             </>
                         )}
-                        {/* <div className="flex flex-wrap gap-2 mb-4">
-                            {project.skills.map((skill, index) => (
-                                <div key={index} className="relative bg-slate-500/70 text-gray-50 backdrop-blur-sm selection:bg-slate-700
-                                                            shadow-[0_5px_3px_-3px_rgba(100,116,139,0.24)] px-3 py-1 text-[0.6rem] uppercase tracking-wider rounded-2xl">
-                                    {skill}
-                                </div>
-                            ))}
-                        </div> */}
-
-
                         <div className="relative overflow-hidden text-base bg-gray-50 rounded-md pt-12 pb-6 px-4 selection:bg-slate-300">
                             <div className={`absolute top-0 right-0 rounded-bl-lg text-[0.6rem] uppercase tracking-wider py-1 px-2
                                            shadow-[0_0_15px_0_rgba(100,116,139,0.24)] flex gap-x-[0.4rem] items-center font-medium border-b border-l

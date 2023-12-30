@@ -1,5 +1,3 @@
-import React from "react";
-import Image from "next/image";
 import ProjectTemplate, { Callout } from "@/components/projectTemplate";
 import paintwallImg from "@/public/project/blog-cover/paintwall.png";
 
