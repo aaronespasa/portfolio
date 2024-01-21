@@ -151,7 +151,7 @@ export default function Intro() {
       >
         <Link
           href="#contact"
-          className="group bg-gray-900 text-white px-6 py-2 lg:px-7 lg:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105
+          className="group bg-gray-900 text-white px-6 py-4 lg:px-7 lg:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105
                     hover:bg-gray-950 hover:text-gray-200 active:scale-95 transition shadow-sm"
           onClick={() => {
             setActiveSection("Contact");
@@ -163,7 +163,7 @@ export default function Intro() {
         </Link>
 
         <a
-          className="group bg-white px-6 py-2 lg:px-7 lg:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 border border-black/10 shadow-sm hover:bg-[#FFF4F1]
+          className="group bg-white px-6 py-4 lg:px-7 lg:py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 border border-black/10 shadow-sm hover:bg-[#FFF4F1]
                    hover:border-[#F24E1E]/30 hover:text-[#F24E1E] hover:scale-105 active:scale-95 transition cursor-pointer"
           href="/CV_Aaron_Espasandin.pdf"
           download
@@ -174,7 +174,7 @@ export default function Intro() {
 
         <div className="flex gap-2">
           <a
-            className="bg-white p-4 text-gray-700 border border-black/10 shadow-sm hover:bg-[#F1F8FF] hover:text-[#0A66C2] hover:border-[#0A66C2]/30
+            className="bg-white px-[1.125rem] text-gray-700 border border-black/10 shadow-sm hover:bg-[#F1F8FF] hover:text-[#0A66C2] hover:border-[#0A66C2]/30
                         flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer"
             href="https://www.linkedin.com/in/aaronespasa/"
             target="_blank"

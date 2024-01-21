@@ -61,11 +61,11 @@ const BaseCard: React.FC<BaseCardProps> = ({ children, customClassName, gridClas
           damping: 15,
         },
         backgroundColor: {
-          duration: 0.3,
+          duration: 0.2,
           ease: "easeInOut"
         },
         borderColor: {
-          duration: 0.3,
+          duration: 0.2,
           ease: "easeInOut"
         },
       }}
@@ -83,7 +83,7 @@ type CardProps = BaseCardProps & {
 const Card: React.FC<CardProps> = ({ children, gridClassName, customClassName, itemId, selectedId, handleCardClick, handleCloseCard }) => {
   return (
     <BaseCard gridClassName={gridClassName} itemId={itemId} handleCardClick={handleCardClick} active={selectedId === itemId} customClassName={customClassName}
-              className="z-50 fixed top-[5%] left-[10%] lg:top-[10%] lg:left-1/4 mx-auto w-[80vw] !h-[80vh] max-w-[300px] max-h-[450px] md:max-w-[600px] lg:max-h-[600px]" 
+              className="z-50 fixed top-[5%] lg:top-[10%] inset-0 mx-auto w-[80vw] !h-[80vh] max-w-[300px] max-h-[450px] md:max-w-[600px] lg:max-h-[600px]" 
     >
       { selectedId === itemId && (
         <button onClick={(e) => { e.stopPropagation(); handleCloseCard(); }}
