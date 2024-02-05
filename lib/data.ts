@@ -84,7 +84,7 @@ export const experiencesData = [
   },
   {
     title: "Internship at Vodafone",
-    location: "Remote",
+    location: "Madrid, Spain",
     description: "Interned as a Generative AI Engineer at Vodafone, where I contributed to developing a web-based chatbot utilizing Retrieval-augmented Generation (RAG) for the Innovation Team. Also developed a platform using React.js and NextJS for showcasing AI proof of concepts, significantly enhancing cross-departmental collaboration.",
     icon: React.createElement(CgWorkAlt), // CgWorkAlt for work experience
     date: "June 2023 - November 2023",
