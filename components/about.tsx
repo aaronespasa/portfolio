@@ -253,9 +253,9 @@ export default function About() {
                            active={selectedId === "early-days"}
                            image1={EarlyDay1} image2={EarlyDay2} image3={EarlyDay3} openImage={openImage}
                            title="My Early Days & Hackathons"
-                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
+                           shortDescription={<>I started my tech adventure at 14 with digital marketing, quickly moved into front-end development, and finally found my calling in AI. My team's AI tool won second place at GameOfCode.eu, enhancing online classes with NLP and computer vision.</>}
             >
-              This is the Early Days description. You can <b>bold</b> any text here.
+              My tech journey kicked off when I was 14, dabbling in digital marketing before shifting gears to front-end development. However, it was the magic of AI that truly captured my interest, particularly Machine Learning and Computer Vision. A standout moment early in my career was competing in the GameOfCode.eu hackathon. There, my team and I developed an AI program that significantly improved online learning through NLP and computer vision, landing us in a proud second place. This experience was more than a competition; it was a thrilling challenge that solidified my passion for AI.
             </ContentLayout>
           </Card>
           <Card key="education" itemId="education" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -266,9 +266,9 @@ export default function About() {
                            active={selectedId === "education"}
                            image1={University1} image2={University2} image3={University3} openImage={openImage}
                            title="BSc Computer Science"
-                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
+                           shortDescription={<>Pursuing a BSc in Computer Science at University Carlos III of Madrid, with an AI specialization.</>}
             >
-              This is the Education description. You can <b>bold</b> any text here.
+              I'm on the home stretch of my BSc in Computer Science at University Carlos III of Madrid, where I've honed my focus on AI.
             </ContentLayout>
           </Card>
           <Card key="self-education-personal-projects" itemId="self-education-personal-projects" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -279,9 +279,9 @@ export default function About() {
                            active={selectedId === "self-education-personal-projects"}
                            image1={SelfEducation1} image2={SelfEducation2} image3={SelfEducation3} openImage={openImage}
                            title="Self-Education & Personal Projects"
-                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
+                           shortDescription={<>I'm always leveling up my skills with courses on ML, TensorFlow, and Swift, and putting theory to practice with projects like ‘RentMate’, an AI-driven tool for predicting rental prices.</>}
             >
-              This is the Self-Education & Personal Projects description. You can <b>bold</b> any text here.
+              My thirst for knowledge doesn't stop at the classroom door. I've taken my learning into my own hands with courses covering Machine Learning, TensorFlow, Deep Learning, and Swift programming. My project ‘RentMate’ stands out as a practical application of my studies, offering AI-driven rental price predictions in Madrid. This project, built on an Explainable Transformer model, is a perfect example of my drive to bring AI solutions to real-world issues.
             </ContentLayout>
           </Card>
           <Card key="professional-experience" itemId="professional-experience" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -292,9 +292,9 @@ export default function About() {
                            active={selectedId === "professional-experience"}
                            image1={ProfessionalExp1} image2={ProfessionalExp2} image3={ProfessionalExp3} openImage={openImage}
                            title="Professional Experience"
-                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
+                           shortDescription={<>I interned as a Generative AI Engineer at Vodafone and contributed to Meta’s PlayTorch, working on AI applications and adapting ML models for new platforms.</>}
             >
-              This is the Professional Experience description. You can <b>bold</b> any text here.
+              In my professional path, I've been a Generative AI Engineer intern at Vodafone, where I was instrumental in developing innovative AI solutions, including a web-based chatbot based on a Retrieval Augmented Generation (RAG) model. I also contributed to Meta’s PlayTorch project, focusing on adapting ML models for Apple Silicon devices. These roles have sharpened my skills in AI, teamwork, and the ability to tackle tech challenges head-on.
             </ContentLayout>
           </Card>
           <Card key="volunteering" itemId="volunteering" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -305,9 +305,9 @@ export default function About() {
                            active={selectedId === "volunteering"}
                            image1={Volunteering1} image2={Volunteering2} image3={Volunteering3} openImage={openImage}
                            title="Volunteering as Instructor on AI"
-                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description. I mean, it's really long. I don't know what to write here.</>}
+                           shortDescription={<>As a mentor with Saturdays.AI, I've taught Computer Vision, sharing my knowledge on Object Detection and Image Segmentation to inspire others.</>}
             >
-              This is the Volunteering description. You can <b>bold</b> any text here.
+              Volunteering as a Computer Vision mentor at Saturdays.AI has allowed me to give back by teaching Object Detection, Image Segmentation, and Autoencoders using OpenCV and Keras. This experience has been incredibly rewarding, allowing me to help demystify AI for enthusiasts and equip them with the skills to explore this dynamic field further.
             </ContentLayout>
           </Card>
           <Card key="hobbies" itemId="hobbies" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -318,9 +318,9 @@ export default function About() {
                            active={selectedId === "hobbies"}
                            image1={Hobbies1} image2={Hobbies2} image3={Hobbies3} openImage={openImage}
                            title="Hobbies"
-                           shortDescription={<>This is a nice description. <b>You know right?</b></>}
+                           shortDescription={<>I love merging creativity with tech, making educational videos, and dabbling in graphic design for the web.</>}
             >
-              This is the Hobbies description. You can <b>bold</b> any text here.
+              When I'm not buried in code, I channel my creativity into making educational videos and exploring graphic design for the web. This blend of tech and art allows me to express ideas visually and engage with a broader audience, showcasing the fun and impactful side of technology.
             </ContentLayout>
           </Card>
           <Card key="sports" itemId="sports" handleCardClick={handleCardClick} selectedId={selectedId} handleCloseCard={handleCloseCard}
@@ -331,9 +331,9 @@ export default function About() {
                            active={selectedId === "sports"}
                            image1={Sports1} image2={Sports2} image3={Sports3} openImage={openImage}
                            title="Sports"
-                           shortDescription={<>This is a nice description. <b>You know right?</b> And this is a very long description.</>}
+                           shortDescription={<>I'm a former rugby player for the Asturias team and now a gym enthusiast, valuing physical fitness and the lessons learned from team sports.</>}
             >
-              This is the Sports description. You can <b>bold</b> any text here.
+              My sports journey began on the rugby field, playing for six years and representing the Asturias team. This experience taught me the importance of teamwork, discipline, and resilience. Nowadays, I keep active by hitting the gym, maintaining my physical health, and embodying the spirit of perseverance and strength I learned from rugby.
             </ContentLayout>
           </Card>
         </motion.ul>
