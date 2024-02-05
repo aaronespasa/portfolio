@@ -1,6 +1,6 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { CgTrophy, CgWorkAlt } from "react-icons/cg";
+import { LiaHandshakeSolid, LiaCodeBranchSolid  } from "react-icons/lia";
 import { LuGraduationCap } from "react-icons/lu";
 import paintwallImg from "@/public/project/cover/paintwall.jpg";
 import richiImg from "@/public/project/cover/research-buddy.png";
@@ -59,7 +59,35 @@ export const experiencesData = [
     description:
       "I started studying Computer Science at University Carlos III of Madrid.",
     icon: React.createElement(LuGraduationCap), // CgWorkAlt
-    date: "2020",
+    date: "September 2020",
+  },
+  {
+    title: "GameOfCode.eu Competition",
+    location: "Online",
+    description: "Participated in the GameOfCode.eu competition, where my team and I developed an innovative AI tool that uses Computer Vision and NLP to enhance online learning experiences. Our project earned us second place, highlighting our ability to apply AI to solve real-world problems.",
+    icon: React.createElement(CgTrophy), // Alternative icon for achievement
+    date: "October 2020",
+  },
+  {
+    title: "Meta PlayTorch Open Source Contributor",
+    location: "Remote",
+    description: "Contributed to Meta’s PlayTorch project, focusing on integrating ML models for Apple Silicon devices. My work involved creating an Android Virtual Device compatible with Apple's ARM CPU architecture, enabling seamless execution on the latest Macs, and solving a challenging quantization runtime error.",
+    icon: React.createElement(LiaCodeBranchSolid), // GiBrain for innovative/technical contribution
+    date: "October 2020 - February 2021",
+  },
+  {
+    title: "Volunteering at Saturdays.AI",
+    location: "Madrid, Spain",
+    description: "Volunteered as a mentor at Saturdays.AI, teaching Computer Vision. I conducted courses on Object Detection, Image Segmentation, and Autoencoders, using OpenCV and Keras. This experience allowed me to share my passion for AI and empower others to explore the field of Computer Vision.",
+    icon: React.createElement(LiaHandshakeSolid), // Alternative icon for volunteering
+    date: "October 2022 - June 2023",
+  },
+  {
+    title: "Internship at Vodafone",
+    location: "Remote",
+    description: "Interned as a Generative AI Engineer at Vodafone, where I contributed to developing a web-based chatbot utilizing Retrieval-augmented Generation (RAG) for the Innovation Team. Also developed a platform using React.js and NextJS for showcasing AI proof of concepts, significantly enhancing cross-departmental collaboration.",
+    icon: React.createElement(CgWorkAlt), // CgWorkAlt for work experience
+    date: "June 2023 - November 2023",
   },
 ] as const;
 
