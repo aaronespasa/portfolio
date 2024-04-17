@@ -17,9 +17,9 @@ export default function PaintWall() {
             intro="PaintWall is a mobile app that allows you to visualize how a wall would look like with a certain color in order to make a decision on painting it."
             image={paintwallImg}
         >
-            <div className="w-full flex items-center mb-10 gap-x-4">
+            <div className="w-full flex items-center flex-col sm:flex-row mb-10 gap-x-4">
                 <Image src={project?.imageUrl} alt="PaintWall app icon" width={512} height={512} quality={100} className="w-28 h-28 rounded-3xl shadow-2xl" />
-                <div className="py-2 px-4 rounded-2xl border-dashed border border-indigo-600 bg-indigo-50 text-[0.99rem]">
+                <div className="py-2 px-4 rounded-2xl border-dashed border border-indigo-600 bg-indigo-50 text-[0.99rem] mt-8 sm:mt-0">
                     PaintWall's model sets a new standard, <span className="font-medium">outperforming the previous best model by 0.5 mIoU</span>.<br/><br/>The mobile app is under development.
                 </div>
             </div>
