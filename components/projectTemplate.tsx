@@ -30,7 +30,7 @@ export const Callout = ({ tag, type, children }: CalloutProps) => {
 
 const CoverBackground = ({ src, title, children }: { src: string, title: string, children: React.ReactNode }) => {
     return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full max-h-[60rem]">
             <div className="h-full w-full absolute -top-12 left-0 pointer-events-none z-0 overflow-hidden">
                 <Image src={src} alt={title + " cover"} fill sizes="100vw" className="object-cover mix-blend-multiply blur-[6px]" />
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 -z-[2]"></div>

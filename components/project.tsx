@@ -24,7 +24,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, skills, imageUrl, date, slug, isEven, special }) => (
   <section className={` relative max-w-[42rem] rounded-lg overflow-hidden
                           sm:pr-8 sm:h-[20rem] transition duration-200 sm:group-even:pl-8
-                          ${special ? "card-wrapper h-48" : "bg-gray-100 hover:bg-gray-200 border border-black/5 hover:border-gray-300"}
+                          ${special ? "card-wrapper h-80" : "bg-gray-100 hover:bg-gray-200 border border-black/5 hover:border-gray-300"}
                           `}>
     <div className={`h-full ${special && "card-content sm:flex sm:items-center border border-black/5 hover:border-gray-300"}`}>
       {/* tag of the date, at the left when odd and right when even */}
