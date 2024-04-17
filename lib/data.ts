@@ -2,7 +2,7 @@ import React from "react";
 import { CgTrophy, CgWorkAlt } from "react-icons/cg";
 import { LiaHandshakeSolid, LiaCodeBranchSolid  } from "react-icons/lia";
 import { LuGraduationCap } from "react-icons/lu";
-import paintwallImg from "@/public/project/cover/paintwall.jpg";
+import paintwallImg from "@/public/project/cover/paintwall.svg";
 import richiImg from "@/public/project/cover/research-buddy.png";
 import rentmateImg from "@/public/project/cover/rentmate.png";
 import deepfakeDetectionImg from "@/public/project/cover/deepfake-detection.png";
@@ -204,15 +204,16 @@ export const projectsData = [
     title: "PaintWall",
     slug: "paintwall",
     description:
-      "Mobile application to colorize walls using augmented reality.",
+      "App enabling users to realistically paint on walls with almost lifelike precision. Top-performing solution in the industry!",
     skills: ["PyTorch", "C++", "Swift", "Python"],
     category: ["ml"],
     tags: ["Deep Learning", "Computer Vision", "Augmented Reality"],
     contributors: [],
     date: null,
-    score: 8,
+    score: 10,
     imageUrl: paintwallImg,
-    links: []
+    links: [],
+    special: true
   },
   {
     title: "Research Buddy",
@@ -226,7 +227,8 @@ export const projectsData = [
     date: "Sept. 2023",
     score: 9,
     imageUrl: richiImg,
-    links: []
+    links: [],
+    special: false
   },
   {
     title: "RentMate",
@@ -251,7 +253,8 @@ export const projectsData = [
         type: "docs",
         url: "https://drive.google.com/file/d/1eAVE6BUB9JOWOutZEYEuPSHTp7kjpckd/view?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "DeepFake Detection",
@@ -265,7 +268,8 @@ export const projectsData = [
     score: 6,
     date: "June 2022",
     imageUrl: deepfakeDetectionImg,
-    links: []
+    links: [],
+    special: false
   },
   {
     title: "Review2Rating",
@@ -289,7 +293,8 @@ export const projectsData = [
         type: "docs",
         url: "https://docs.google.com/document/d/11G-zlRtPlRLZZMMHvw2uR9mkDpbsgWtf14JoerHN5rE/edit?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Background Removal",
@@ -308,7 +313,8 @@ export const projectsData = [
         type: "web",
         url: "https://drive.google.com/file/d/1Sx1zC2aDpvToIVgeXpyYzRlYr5PqyU0y/view?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Image Captioning",
@@ -328,7 +334,8 @@ export const projectsData = [
         type: "github",
         url: "https://github.com/aaronespasa/image-captioning-pytorch"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Music Manager",
@@ -357,7 +364,8 @@ export const projectsData = [
         type: "docs",
         url: "https://docs.google.com/document/d/12MUyneA9MDr9n1EF_KLiVCsfxo5jXvUe9w8tt5D834Y/edit?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Hospital Database",
@@ -381,7 +389,8 @@ export const projectsData = [
         type: "docs",
         url: "https://docs.google.com/document/d/16tgyfjsu_9J0ok5J--WuzUR5-FbclTpmIXTv8hfCJVo/edit?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "3rdEye",
@@ -415,7 +424,8 @@ export const projectsData = [
         type: "slides",
         url: "https://docs.google.com/presentation/d/1dNCr0h4B1W8-w5jlsJplBeFec8iN216IQonUtudr1Zk/edit?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "A* Pathfinding (C++)",
@@ -434,7 +444,8 @@ export const projectsData = [
         type: "github",
         url: "https://github.com/aaronespasa/a-star-openstreetmap"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Bus Routing & Seat Allocation",
@@ -468,7 +479,8 @@ export const projectsData = [
         type: "github",
         url: "https://github.com/aaronespasa/bus-seat-allocator"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Socket Messaging (C)",
@@ -512,7 +524,8 @@ export const projectsData = [
         type: "docs",
         url: "https://docs.google.com/document/d/1u6b-ps0ORuEGtf15gwOqfJ7ZNtexCErXlFpiKg6ZTeE/edit?usp=sharing"
       }
-    ]
+    ],
+    special: false
   },
   {
     title: "Computer Vision Hispano",
@@ -525,7 +538,8 @@ export const projectsData = [
     date: null,
     score: 8,
     imageUrl: computerVisionWebImg,
-    links: []
+    links: [],
+    special: false
   }
 ];
 

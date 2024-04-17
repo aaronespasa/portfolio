@@ -1,5 +1,5 @@
 import ProjectTemplate, { Callout } from "@/components/projectTemplate";
-import socketMessagingImg from "@/public/project/blog-cover/socket-messaging.png";
+import socketMessagingImg from "@/public/project/blog-cover/socket-messaging.webp";
 
 export default function SocketMessaging() {
     return (

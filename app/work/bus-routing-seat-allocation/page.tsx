@@ -1,5 +1,5 @@
 import ProjectTemplate, { Callout } from "@/components/projectTemplate";
-import busRoutingSeatAllocationImg from "@/public/project/blog-cover/bus-routing-seat-allocation.jpeg";
+import busRoutingSeatAllocationImg from "@/public/project/blog-cover/bus-routing-seat-allocation.webp";
 
 export default function BusRoutingSeatAllocation() {
     return (

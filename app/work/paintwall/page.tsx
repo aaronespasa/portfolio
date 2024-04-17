@@ -1,5 +1,5 @@
 import ProjectTemplate, { Callout } from "@/components/projectTemplate";
-import paintwallImg from "@/public/project/blog-cover/paintwall.png";
+import paintwallImg from "@/public/project/blog-cover/paintwall.webp";
 
 export default function PaintWall() {
     return (

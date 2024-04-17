@@ -1,5 +1,5 @@
 import ProjectTemplate, { Callout } from "@/components/projectTemplate";
-import thirdEyeImage from "@/public/project/blog-cover/3rdeye.png";
+import thirdEyeImage from "@/public/project/blog-cover/3rdeye.webp";
 
 export default function ThirdEye() {
     return (

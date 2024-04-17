@@ -1,5 +1,5 @@
 import ProjectTemplate, { Callout } from "@/components/projectTemplate";
-import backgroundRemovalImg from "@/public/project/blog-cover/videoconferencing-background-removal.png";
+import backgroundRemovalImg from "@/public/project/blog-cover/videoconferencing-background-removal.webp";
 
 export default function VideoConferencingBackgroundRemoval() {
     return (
